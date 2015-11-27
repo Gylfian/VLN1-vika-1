@@ -1,4 +1,4 @@
-#include "randomclass.h"
+#include "data.h"
 
 Randomclass::Randomclass()
 {

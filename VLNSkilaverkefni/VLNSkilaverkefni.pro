@@ -8,8 +8,14 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    randomclass.cpp
+    data.cpp \
+    domain.cpp \
+    presentation.cpp \
+    cscientist.cpp
 
 HEADERS += \
-    randomclass.h
+    data.h \
+    domain.h \
+    presentation.h \
+    cscientist.h
 

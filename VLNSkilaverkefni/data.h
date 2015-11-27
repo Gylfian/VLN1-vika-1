@@ -5,7 +5,6 @@
 class Randomclass
 {
 public:
-    int x;
     Randomclass();
 };
 
