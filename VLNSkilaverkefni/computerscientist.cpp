@@ -1,4 +1,4 @@
-#include "cscientist.h"
+#include "computerscientist.h"
 
 CScientist::CScientist()
 {

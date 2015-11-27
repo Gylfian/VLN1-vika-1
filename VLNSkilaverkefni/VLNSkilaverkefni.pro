@@ -11,12 +11,12 @@ SOURCES += main.cpp \
     data.cpp \
     domain.cpp \
     presentation.cpp \
-    cscientist.cpp
+    computerscientist.cpp
 
 HEADERS += \
     data.h \
     domain.h \
     presentation.h \
-    cscientist.h \
-    main.h
+    main.h \
+    computerscientist.h
 

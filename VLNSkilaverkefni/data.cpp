@@ -1,6 +1,6 @@
 #include "data.h"
 
-Randomclass::Randomclass()
+Data::Data()
 {
 
 }

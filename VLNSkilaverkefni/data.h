@@ -3,10 +3,10 @@
 
 #include "main.h"
 
-class Randomclass
+class Data
 {
 public:
-    Randomclass();
+    Data();
 };
 
 #endif // RANDOMCLASS_H
