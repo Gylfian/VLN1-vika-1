@@ -5,6 +5,12 @@
 class CScientist
 {
 public:
+
+private:
+    string name;
+    string gender;
+    int age;
+    int date;
     CScientist();
 };
 
