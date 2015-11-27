@@ -1,5 +1,4 @@
 #include <iostream>
-#include <QCoreApplication>
 #include <string>
 
 #include "computerscientist.h"

@@ -1,8 +1,8 @@
 #include "main.h"
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
+    cout << "Hallo" << endl;
 
-    return a.exec();
+    return 0;
 }
 
