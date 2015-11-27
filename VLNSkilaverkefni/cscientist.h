@@ -1,6 +1,7 @@
 #ifndef CSCIENTIST_H
 #define CSCIENTIST_H
 
+#include "main.h"
 
 class CScientist
 {
