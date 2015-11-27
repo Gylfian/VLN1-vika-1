@@ -1,6 +1,6 @@
 #include "presentation.h"
 
-presentation::presentation()
+Presentation::Presentation()
 {
 
 }

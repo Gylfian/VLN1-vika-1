@@ -3,10 +3,10 @@
 
 #include "main.h"
 
-class domain
+class Domain
 {
 public:
-    domain();
+    Domain();
 };
 
 #endif // DOMAIN_H

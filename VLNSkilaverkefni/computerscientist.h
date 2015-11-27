@@ -10,8 +10,8 @@ public:
 private:
     string name;
     string gender;
-    int age;
-    int date;
+    int dateBorn;
+    int dateDeath;
     CScientist();
 };
 

@@ -3,10 +3,10 @@
 
 #include "main.h"
 
-class presentation
+class Presentation
 {
 public:
-    presentation();
+    Presentation();
 };
 
 #endif // PRESENTATION_H

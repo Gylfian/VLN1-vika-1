@@ -1,6 +1,6 @@
 #include "domain.h"
 
-domain::domain()
+Domain::Domain()
 {
 
 }
