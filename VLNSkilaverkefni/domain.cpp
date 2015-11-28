@@ -38,15 +38,59 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
             {
                 swapValues(cSciList, i, i + 1);
             }
-            else
-            {
-                c++;
-            }
         }
+        c++;
     }
     if(!byAscending)
     {
         reverseList(cSciList);
+    }
+}
+
+void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending)
+{
+    vector<CScientist> tmp;
+    vector<CScientist> tmp2;
+    string searchWord;
+    if(byMale)
+    {
+        searchWord = "Male";
+    }
+    else
+    {
+        searchWord = "Female";
+    }
+
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        if(cSciList[i].gender == searchWord)
+        {
+            tmp.push_back(cSciList[i]);
+        }
+        else
+        {
+            tmp2.push_back(cSciList[i]);
+        }
+    }
+
+    if(byAscending)
+    {
+        sortByAlphabet(tmp, true);
+        sortByAlphabet(tmp2, true);
+    }
+   mergeList(cSciList, tmp, tmp2);
+}
+
+void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, vector<CScientist> vec2)
+{
+    cSciList.clear();
+    for(unsigned int i = 0; i < vec1.size(); i++)
+    {
+        cSciList.push_back(vec1[i]);
+    }
+    for(unsigned int j = 0; j < vec2.size(); j++)
+    {
+        cSciList.push_back(vec2[j]);
     }
 }
 
@@ -75,16 +119,10 @@ int Domain::compareString(string str1, string str2)
         if(strval1 < strval2)
         {
             return 1;
-            break;
         }
-        else if(strval1 == strval2)
-        {
-            continue;
-        }
-        else
+        else if(strval1 > strval2)
         {
             return 2;
-            break;
         }
     }
     return 0;
