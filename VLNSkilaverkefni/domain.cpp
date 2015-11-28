@@ -19,3 +19,7 @@ vector<CScientist> Domain::sortByYear(bool byOldest, vector<CScientist> cSciList
     return cSciList;
 }
 
+void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
+{
+
+}

@@ -14,12 +14,13 @@ public:
     void setgender(string gendertoset);
     void setDOB(int datetoset);
     void SetDOD(int datetoset);
-    CScientist();
-private:
     string name;
     string gender;
     int dateBorn;
     int dateDeath;
+
+    CScientist();
+private:
 
 };
 

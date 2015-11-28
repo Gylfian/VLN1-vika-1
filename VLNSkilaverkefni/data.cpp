@@ -13,8 +13,8 @@
 void Data::readFromFile(string docName, vector <CScientist> scientists)
 {
     ifstream inStream;
-    scientists temp;
-    instream.open(docName.c_str());
+    CScientist temp;
+    inStream.open(docName.c_str());
     while(!inStream.eof())
     {
         inStream >> temp.name;
@@ -22,7 +22,7 @@ void Data::readFromFile(string docName, vector <CScientist> scientists)
         inStream >> temp.dateBorn;
         inStream >> temp.dateDeath;
 
-        scientists.push_back(next);
+        scientists.push_back(temp);
     }
 }
 
