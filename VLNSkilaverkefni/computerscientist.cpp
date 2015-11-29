@@ -1,5 +1,5 @@
 #include "computerscientist.h"
-
+#include "domain.h"
 CScientist::CScientist()
 {
     name = "";
@@ -63,8 +63,19 @@ ostream & operator << (ostream & output, const CScientist & c1){
 
 string CScientist::getinputName(istream & input){
 string name;
+Domain d1;
+bool namecheck=false;
 cout << "Enter name: ";
-getline(input,name);
+    while(namecheck==false){
+    getline(input,name);
+    namecheck = d1.normalizeName(name);
+        if(namecheck==true){
+        return name;
+        }
+        else{
+        cout << "Please enter a valid name: ";
+        }
+    }
 return name;
 }
 string CScientist::getinputGender(istream & input){
