@@ -68,6 +68,11 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
         sortByAlphabet(tmp, true);
         sortByAlphabet(tmp2, true);
     }
+    else
+    {
+        sortByAlphabet(tmp, false);
+        sortByAlphabet(tmp2, false);
+    }
    mergeList(cSciList, tmp, tmp2);
 }
 
