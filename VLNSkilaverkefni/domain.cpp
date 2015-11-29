@@ -136,3 +136,29 @@ int Domain::decimalValue(char chr)
     return decimal;
 }
 
+
+bool Domain::normalizeName(string &name)
+{
+    if(name.length() <= 0)
+    {
+        return false;
+    }
+
+    for(unsigned int i = 0; i < name.length(); i++)
+    {
+        name[i] = tolower(name[i]);
+    }
+    name[0] = toupper(name[0]);
+    for(unsigned int j = 0; j < name.length(); j++)
+    {
+        if(name[j] == ' ')
+        {
+            if(name[j+1] != ' ')
+            {
+               name[j+1] = toupper(name[j+1]);
+            }
+        }
+    }
+    return true;
+}
+
