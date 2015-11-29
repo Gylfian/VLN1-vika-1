@@ -9,11 +9,14 @@ public:
     Presentation();
     void mainPage();
     void getAns();
+    void addScientist();
     void options();
     bool another();
     void listOptions();
     void displayListOptions();
-    bool ascendingDecending();
+    void alphaAscendingDecending();
+    void genderOrder();
+    void ascendingDecendingText();
 
 };
 

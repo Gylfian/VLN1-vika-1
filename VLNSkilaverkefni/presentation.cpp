@@ -1,17 +1,17 @@
 #include "main.h"
 #include "presentation.h"
-#include <stdlib.h>
-#include <conio.h>
+#include "computerscientist.h"
+
 
 Presentation::Presentation() {}
 
 void Presentation::mainPage()
 {
-    cout << " ________________________________________" << endl;
+    cout << " ________________MAIN_MENU_______________" << endl;
     cout << "|---------What do you want to do?--------|" << endl;
-    cout << "| 1) Add computer scientists to the list |" << endl;
-    cout << "| 2) See the list of computer scientists |" << endl;
-    cout << "| ------Press any other key to quit----- |" << endl;
+    cout << "|-1) Add computer scientists to the list-|" << endl;
+    cout << "|-2) See the list of computer scientists-|" << endl;
+    cout << "|-------Press any other key to quit------|" << endl;
     cout << "|________________________________________|" << endl;
     options();
 }
@@ -24,22 +24,36 @@ void Presentation::options()
     switch (ans)
     {
         case ('1'):
-            cout << "Flott hja ther" << endl;
-            break;
+        {
+            addScientist();
+        }break;
         case ('2'):
-            {
-                displayListOptions();
-            }
-            break;
+        {
+            displayListOptions();
+        }break;
         default:
             exit (1);
     }
 }
 
+void Presentation::addScientist()
+{
+    CScientist cSci;
+
+    do
+    {
+        cin >> cSci;
+
+
+    }while(another());
+    system("CLS");
+    mainPage();
+}
+
 bool Presentation::another()
 {
-
-    cout << "Do you wish to add another person (y/n) ";
+    cout << "-------------Person added--------------" << endl;
+    cout << "Do you wish to add another person (y/n)" << endl;
     char ans = getch();
 
     switch (ans)
@@ -59,12 +73,14 @@ bool Presentation::another()
 
 void Presentation::displayListOptions()
 {
-    cout << "How do you want the list displayed? " << endl;
-    cout << "1) Alphabetically" << endl;
-    cout << "2) By gender" << endl;
-    cout << "3) By year of birth" << endl;
-    cout << "4) By year of death" << endl;
-    cout << "Press any other key to go back" << endl;
+    cout << " _____________________________________" << endl;
+    cout << "|-How do you want the list displayed?-|" << endl;
+    cout << "|-1) Alphabetically-------------------|" << endl;
+    cout << "|-2) By gender------------------------|" << endl;
+    cout << "|-3) By year of birth-----------------|" << endl;
+    cout << "|-4) By year of death-----------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
     listOptions();
 
 }
@@ -78,33 +94,80 @@ void Presentation::listOptions()
     {
         case('1'):
         {
-
-        }
-        break;
+            alphaAscendingDecending();
+        }break;
         case ('2'):
         {
-
-        }
-        break;
+            genderOrder();
+        }break;
         case ('3'):
         {
 
-        }
-        break;
+        }break;
         case ('4'):
         {
 
-        }
+        }break;
         default:
             mainPage();
 
     }
 }
 
-bool Presentation::ascendingDecending()
+void Presentation::ascendingDecendingText()
 {
-    cout << "In what alphabetical order do you want the list?" << endl;
-    cout << "1) Ascending" << endl;
-    cout << "2) Decending" << endl;
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Ascending order------------------|" << endl;
+    cout << "|-2) Decending order------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}
 
+void Presentation::alphaAscendingDecending()
+{
+    ascendingDecendingText();
+    char ans = getch();
+    system("CLS");
+
+    switch (ans)
+    {
+        case ('1'):
+        {
+
+        }break;
+        case('2'):
+        {
+
+        }break;
+        default:
+            displayListOptions();
+    }
+}
+
+void Presentation::genderOrder()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Male first-----------------------|" << endl;
+    cout << "|-2) Female first---------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+
+    char ans = getch();
+    system("CLS");
+
+    switch (ans)
+    {
+        case ('1'):
+        {
+
+        }break;
+        case ('2'):
+        {
+
+        }break;
+        default:
+            displayListOptions();
+    }
 }
