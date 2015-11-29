@@ -5,26 +5,21 @@ Domain::Domain()
 
 }
 
-vector<CScientist> Domain::sortByYear(bool byOldest, vector<CScientist> cSciList)
+void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 {
-    vector<CScientist> sortedList = cSciList;
-    if(byOldest)
-    {
 
-    }
-    else
-    {
-
-    }
-    return cSciList;
 }
 
 
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
-    int c = 0;
-    int strVal = 0;
+    int c = 0, strVal = 0;
     int length = cSciList.size();
+    int searchValue = 2;
+    if(!byAscending)
+    {
+        searchValue = 1;
+    }
     while(c < length)
     {
         for(int i = 0; i < length; i++)
@@ -34,23 +29,18 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
             else
                 break;
 
-            if(strVal == 2)
+            if(strVal == searchValue)
             {
                 swapValues(cSciList, i, i + 1);
             }
         }
         c++;
     }
-    if(!byAscending)
-    {
-        reverseList(cSciList);
-    }
 }
 
 void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending)
 {
-    vector<CScientist> tmp;
-    vector<CScientist> tmp2;
+    vector<CScientist> tmp, tmp2;
     string searchWord;
     if(byMale)
     {
@@ -107,20 +97,18 @@ void Domain::reverseList(vector<CScientist> &cSciList)
 
 int Domain::compareString(string str1, string str2)
 {
-    int strval1 = 0;
-    int strval2 = 0;
-    int cmp1length = str1.length();
-    int cmp1length2 = str2.length();
-    int lowerLength = min(cmp1length, cmp1length2);
+    int strVal1 = 0, strVal2 = 0;
+    int cmp1Length = str1.length(), cmp1Length2 = str2.length();
+    int lowerLength = min(cmp1Length, cmp1Length2);
     for(int i = 0; i < lowerLength; i++)
     {
-        strval1 = decimalValue(str1[i]);
-        strval2 = decimalValue(str2[i]);
-        if(strval1 < strval2)
+        strVal1 = decimalValue(str1[i]);
+        strVal2 = decimalValue(str2[i]);
+        if(strVal1 < strVal2)
         {
             return 1;
         }
-        else if(strval1 > strval2)
+        else if(strVal1 > strVal2)
         {
             return 2;
         }
@@ -136,10 +124,10 @@ void Domain::swapValues(vector<CScientist> &cSciList, int index1, int index2)
     cSciList[index2] = tmpVal1;
 }
 
-int Domain::decimalValue(char x)
+int Domain::decimalValue(char chr)
 {
-    x = tolower(x);
-    int d = x - '0';
-    return d;
+    chr = tolower(chr);
+    int decimal = chr - '0';
+    return decimal;
 }
 
