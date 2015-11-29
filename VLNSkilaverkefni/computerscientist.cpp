@@ -8,33 +8,33 @@ CScientist::CScientist()
     dateDeath =0;
 }
 
-string CScientist::getname(){
+string CScientist::getName(){
     return name;
 }
 
-string CScientist::getgender(){
+string CScientist::getGender(){
    return gender;
 }
 
 
-int CScientist::getDOB(){
+int CScientist::getDob(){
    return dateBorn;
 }
 
-int CScientist::getDOD(){
+int CScientist::getDod(){
    return dateDeath;
 }
 
-void CScientist::setname(string nametoset){
-    name=nametoset;
+void CScientist::setName(string nameToSet){
+    name=nameToSet;
 }
 
-void CScientist::setgender(string gendertoset){
-    gender=gendertoset;
+void CScientist::setGender(string genderToSet){
+    gender=genderToSet;
 }
-void CScientist::setDOB(int datetoset){
-    dateBorn=datetoset;
+void CScientist::setDob(int dateToSet){
+    dateBorn=dateToSet;
 }
-void CScientist::SetDOD(int datetoset){
-    dateDeath=datetoset;
+void CScientist::SetDod(int dateToSet){
+    dateDeath=dateToSet;
 }

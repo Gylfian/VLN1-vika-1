@@ -6,14 +6,14 @@
 class CScientist
 {
 public:
-    string getname();
-    string getgender();
-    int getDOB();
-    int getDOD();
-    void setname(string nametoset);
-    void setgender(string gendertoset);
-    void setDOB(int datetoset);
-    void SetDOD(int datetoset);
+    string getName();
+    string getGender();
+    int getDob();
+    int getDod();
+    void setName(string nameToSet);
+    void setGender(string genderToSet);
+    void setDob(int dateToSet);
+    void SetDod(int dateToSet);
     string name;
     string gender;
     int dateBorn;
