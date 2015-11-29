@@ -1,3 +1,5 @@
+/*
+
 #include "data.h"
 
 #include <iostream>
@@ -45,3 +47,4 @@ ostream& operator <<(ostream& stream, const CScientist& scientist)
     stream << scientist.dateDeath << endl;
     return stream;
 }
+*/

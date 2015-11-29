@@ -1,8 +1,12 @@
 #include "main.h"
 #include "domain.h"
+#include "presentation.h"
+
 int main()
 {
-    cout << "Hallo" << endl;
+    Presentation Interface;
+    Interface.mainPage();
+
     return 0;
 }
 

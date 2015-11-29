@@ -7,6 +7,9 @@ class Presentation
 {
 public:
     Presentation();
+    void mainPage();
+    void options();
+    bool another();
 };
 
 #endif // PRESENTATION_H
