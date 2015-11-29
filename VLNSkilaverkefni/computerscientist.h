@@ -18,6 +18,8 @@ public:
     string gender;
     int dateBorn;
     int dateDeath;
+    friend istream & operator >> (istream & input, CScientist & c1);
+    friend ostream & operator << (ostream & output, const CScientist & c1);
 
     CScientist();
 private:
