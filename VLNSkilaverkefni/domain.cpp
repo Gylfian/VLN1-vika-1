@@ -13,15 +13,15 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
-    int c = 0, strVal = 0;
+    int origSwapCounter = 0, swapCounter = 0, strVal = 0, searchValue = 2;
     int length = cSciList.size();
-    int searchValue = 2;
     if(!byAscending)
     {
         searchValue = 1;
     }
-    while(c < length)
+    while(true)
     {
+        origSwapCounter = swapCounter;
         for(int i = 0; i < length; i++)
         {
             if(i + 1 < length)
@@ -32,9 +32,11 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
             if(strVal == searchValue)
             {
                 swapValues(cSciList, i, i + 1);
+                swapCounter++;
             }
         }
-        c++;
+        if(origSwapCounter == swapCounter)
+            break;
     }
 }
 
