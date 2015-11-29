@@ -41,22 +41,47 @@ void CScientist::SetDod(int dateToSet){
 
 istream & operator >> (istream & input, CScientist & c1){
 
-    cout << "Enter name: ";
-    input >> c1.name;
-    cout << "Enter gender: ";
-    input >> c1.gender;
-    cout << "Enter Date of birth: ";
-    input >> c1.dateBorn;
-    cout << "Enter Date of death: ";
-    input >> c1.dateDeath;
+    string enteredName = c1.getinputName(input);
+    c1.name=enteredName;
+    string enteredGender = c1.getinputGender(input);
+    c1.gender=enteredGender;
+    int enteredDob = c1.getinputDob(input);
+    c1.dateBorn=enteredDob;
+    int enteredDod = c1.getinputDod(input);
+    c1.dateDeath=enteredDod;
     return input;
 }
 
 ostream & operator << (ostream & output, const CScientist & c1){
     cout << "Name: " << c1.name << endl;
     cout << "gender: " << c1.gender << endl;
-    cout << "Date of birth: " << c1.dateBorn << endl;
-    cout << "Date of death: " << c1.dateDeath << endl;
+    cout << "year of birth: " << c1.dateBorn << endl;
+    cout << "year of death: " << c1.dateDeath << endl;
 
     return output;
+}
+
+string CScientist::getinputName(istream & input){
+string name;
+cout << "Enter name: ";
+getline(input,name);
+return name;
+}
+string CScientist::getinputGender(istream & input){
+string gender;
+cout << "Enter gender: ";
+input >> gender;
+return gender;
+}
+int CScientist::getinputDob(istream & input){
+int Dob;
+cout << "Enter year of birth: ";
+input >> Dob;
+return Dob;
+}
+int CScientist::getinputDod(istream & input){
+int Dod;
+cout << "Enter year of death: ";
+input >> Dod;
+return Dod;
 }
