@@ -1,9 +1,7 @@
 #ifndef DOMAIN_H
 #define DOMAIN_H
+#include "data.h"
 
-#include "main.h"
-#include "computerscientist.h"
-#include <string>
 class Domain
 {
 public:
@@ -12,6 +10,7 @@ public:
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
     bool normalizeName(string &name);
+    void addToFile(CScientist sci);
 private:
     int  decimalValue(char x);
     int  compareString(string str1, string str2);

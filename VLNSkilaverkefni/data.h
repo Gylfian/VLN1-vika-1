@@ -1,10 +1,10 @@
 #ifndef DATA_H
 #define DATA_H
-#include "computerscientist.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
 using namespace std;
+#include "computerscientist.h"
 
 
 

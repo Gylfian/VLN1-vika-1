@@ -164,3 +164,7 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
+void addToFile(CScientist sci)
+{
+    writeToFile("scientists.txt", sci);
+}

@@ -1,7 +1,7 @@
 #ifndef PRESENTATION_H
 #define PRESENTATION_H
 
-#include "main.h"
+#include "computerscientist.h"
 
 class Presentation
 {

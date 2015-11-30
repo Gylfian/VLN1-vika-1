@@ -1,6 +1,7 @@
-#include "main.h"
+//#include "main.h"
 #include "presentation.h"
 #include "computerscientist.h"
+#include "domain.h"
 
 
 Presentation::Presentation() {}
@@ -43,6 +44,7 @@ void Presentation::addScientist()
     do
     {
         cin >> cSci;
+        addToFile(cSci);
 
 
     }while(another());

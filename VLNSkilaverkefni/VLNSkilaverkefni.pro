@@ -17,6 +17,5 @@ HEADERS += \
     data.h \
     domain.h \
     presentation.h \
-    main.h \
     computerscientist.h
 

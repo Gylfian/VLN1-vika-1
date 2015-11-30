@@ -21,21 +21,21 @@ void Data::readFromFile(string docName, vector <CScientist>& scientists)
 
 void Data::writeToFile(string docName, vector <CScientist>& scientists)
 {
-ofstream outStream;
-outStream.open(docName.c_str());
+    ofstream outStream;
+    outStream.open(docName.c_str(), ios::app);
 
-for(unsigned int i = 0; i<scientists.size(); i++)
-{
-    outStream << scientists[i];
-}
+    for(unsigned int i = 0; i<scientists.size(); i++)
+    {
+        outStream << scientists[i];
+    }
 }
 
 ostream& operator <<(ostream& stream, const CScientist& scientist)
 {
-stream << scientist.getName() << " ";
-stream << scientist.getGender() << " ";
-stream << scientist.getDob() << " ";
-stream << scientist.getDod() << endl;
-return stream;
+    stream << scientist.getName() << " ";
+    stream << scientist.getGender() << " ";
+    stream << scientist.getDob() << " ";
+    stream << scientist.getDod() << endl;
+    return stream;
 }
 
