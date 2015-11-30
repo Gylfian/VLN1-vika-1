@@ -41,8 +41,8 @@ void CScientist::SetDod(string dateToSet){
     dateDeath=dateToSet;
 }
 
-istream & operator >> (istream & input, CScientist & c1){
-
+istream & operator >> (istream & input, CScientist & c1)
+{
     string enteredName = c1.getinputName(input);
     c1.name=enteredName;
     string enteredGender = c1.getinputGender(input);
@@ -54,40 +54,39 @@ istream & operator >> (istream & input, CScientist & c1){
     return input;
 }
 
-ostream & operator << (ostream & output, const CScientist & c1){
+ostream & operator << (ostream & output, const CScientist & c1)
+{
     cout << "Name: " << c1.name << endl;
     cout << "gender: " << c1.gender << endl;
     cout << "year of birth: " << c1.dateBorn << endl;
     cout << "year of death: " << c1.dateDeath << endl;
-
     return output;
 }
 
-string CScientist::getinputName(istream & input){
-string name;
-Domain d1;
-bool namecheck=false;
-cout << "Enter name: ";
-    while(namecheck==false){
-    getline(input,name);
-    namecheck = d1.normalizeName(name);
-        if(namecheck==true){
-        return name;
-        }
-    }
-return name;
+string CScientist::getinputName(istream & input)
+{
+    string name;
+    Domain d1;
+    bool namecheck=false;
+    cout << "Enter name: ";
+        while(namecheck==false){
+            getline(input,name);
+            namecheck = d1.normalizeName(name);
+         }
+    return name;
 }
-string CScientist::getinputGender(istream & input){
-string gender;
-cout << "Is the scientist [m]ale or [f]emale ? " << endl;
-char ans = getch();
-    switch (ans)
-    {
+string CScientist::getinputGender(istream & input)
+{
+    string gender;
+    cout << "Is the scientist [m]ale or [f]emale ? " << endl;
+    char ans = getch();
+        switch (ans)
+        {
         case ('M'):
         case ('m'):
         {
-        gender = "Male";
-        cout << gender<<" selected"<< endl;
+            gender = "Male";
+            cout << gender<<" selected"<< endl;
         }break;
         case ('F'):
         case ('f'):
@@ -95,7 +94,7 @@ char ans = getch();
         gender = "Female";
         cout << gender<<" selected"<< endl;
         }break;
-    default:{
+        default:{
         cout << "Please select either male or female"<<endl;
         this->getinputGender(input);
     }
@@ -104,15 +103,17 @@ char ans = getch();
 }
     return gender;
 }
-string CScientist::getinputDob(istream & input){
-string Dob;
-cout << "Enter year of birth: ";
-input >> Dob;
-return Dob;
+string CScientist::getinputDob(istream & input)
+{
+    string Dob;
+    cout << "Enter year of birth: ";
+    input >> Dob;
+    return Dob;
 }
-string CScientist::getinputDod(istream & input){
-string Dod;
-cout << "Enter year of death: ";
-input >> Dod;
-return Dod;
+string CScientist::getinputDod(istream & input)
+{
+    string Dod;
+    cout << "Enter year of death: ";
+    input >> Dod;
+    return Dod;
 }
