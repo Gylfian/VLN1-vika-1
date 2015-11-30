@@ -1,8 +1,19 @@
+<<<<<<< HEAD
 //#include "main.h"
+=======
+>>>>>>> afd31be918322aafe4e466c49db8b71706cec942
 #include "presentation.h"
-#include "computerscientist.h"
 #include "domain.h"
+#include "computerscientist.h"
+<<<<<<< HEAD
+#include "domain.h"
+=======
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
+>>>>>>> afd31be918322aafe4e466c49db8b71706cec942
 
+using namespace std;
 
 Presentation::Presentation() {}
 
@@ -56,6 +67,7 @@ bool Presentation::another()
 {
     cout << "-------------Person added--------------" << endl;
     cout << "Do you wish to add another person (y/n)" << endl;
+
     char ans = getch();
 
     switch (ans)

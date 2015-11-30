@@ -1,8 +1,11 @@
 #ifndef PRESENTATION_H
 #define PRESENTATION_H
 
+<<<<<<< HEAD
 #include "computerscientist.h"
 
+=======
+>>>>>>> afd31be918322aafe4e466c49db8b71706cec942
 class Presentation
 {
 public:
