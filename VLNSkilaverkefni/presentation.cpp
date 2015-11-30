@@ -1,12 +1,5 @@
-
 #include "presentation.h"
-#include "computerscientist.h"
-#include "domain.h"
-#include <iostream>
-#include <conio.h>
-#include <cstdlib>
 
-using namespace std;
 
 Presentation::Presentation() {}
 
@@ -54,7 +47,7 @@ void Presentation::addScientist()
 
     }while(another());
     Domain dom1;
-    //dom1.addToFile(scientists);
+    dom1.addToFile(scientists);
     system("CLS");
     mainPage();
 }

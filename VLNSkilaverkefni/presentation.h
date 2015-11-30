@@ -1,8 +1,10 @@
 #ifndef PRESENTATION_H
 #define PRESENTATION_H
 
-#include "computerscientist.h"
-#include "vector"
+#include "domain.h"
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
 
 class Presentation
 {
