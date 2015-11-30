@@ -14,7 +14,6 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
     int origSwapCounter = 0, swapCounter = 0, strVal = 0, searchValue = 2;
-    int length = cSciList.size();
     if(!byAscending)
     {
         searchValue = 1;
@@ -22,9 +21,9 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
     while(true)
     {
         origSwapCounter = swapCounter;
-        for(int i = 0; i < length; i++)
+        for(unsigned int i = 0; i < cSciList.size(); i++)
         {
-            if(i + 1 < length)
+            if(i + 1 < cSciList.size())
                 strVal = compareString(cSciList[i].name, cSciList[i+1].name);
             else
                 break;
@@ -96,7 +95,7 @@ void Domain::reverseList(vector<CScientist> &cSciList)
 {
     vector<CScientist> tmp = cSciList;
     cSciList.clear();
-    for(int i = tmp.size()-1; i >= 0; i--)
+    for(size_t i = tmp.size()-1; i >= 0; i--)
     {
         cSciList.push_back(tmp[i]);
     }
@@ -105,8 +104,8 @@ void Domain::reverseList(vector<CScientist> &cSciList)
 int Domain::compareString(string str1, string str2)
 {
     int strVal1 = 0, strVal2 = 0;
-    int cmp1Length = str1.length(), cmp1Length2 = str2.length();
-    int lowerLength = min(cmp1Length, cmp1Length2);
+    size_t cmp1Length = str1.length(), cmp1Length2 = str2.length();
+    size_t lowerLength = min(cmp1Length, cmp1Length2);
     for(int i = 0; i < lowerLength; i++)
     {
         strVal1 = decimalValue(str1[i]);
