@@ -3,10 +3,6 @@
 #include "computerscientist.h"
 #include <fstream>
 #include <vector>
-using namespace std;
-
-
-
 
 class Data
 {
