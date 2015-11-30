@@ -80,9 +80,29 @@ return name;
 }
 string CScientist::getinputGender(istream & input){
 string gender;
-cout << "Enter gender: ";
-input >> gender;
-return gender;
+cout << "Is the scientist [m]ale or [f]emale ? " << endl;
+char ans = getch();
+    switch (ans)
+    {
+        case ('M'):
+        case ('m'):
+        {
+        gender = "Male";
+        }break;
+        case ('F'):
+        case ('f'):
+        {
+        gender = "Female";
+        }break;
+    default:{
+        cout << "Please select either male or female"<<endl;
+        this->getinputGender(input);
+    }
+
+
+}
+    cout << gender<<" selected"<< endl;
+    return gender;
 }
 string CScientist::getinputDob(istream & input){
 string Dob;

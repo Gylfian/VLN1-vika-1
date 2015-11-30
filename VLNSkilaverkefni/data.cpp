@@ -1,6 +1,7 @@
-#include "data.h"
+/*
+  #include "data.h"
 
-void Data::readFromFile(string docName, vector <CScientist>& scientists)
+ void Data::readFromFile(string docName, vector <CScientist>& scientists)
 {
     ifstream inStream;
     CScientist temp;
@@ -39,3 +40,4 @@ stream << scientist.getDod() << endl;
 return stream;
 }
 
+*/
