@@ -1,9 +1,10 @@
 #ifndef DOMAIN_H
 #define DOMAIN_H
 
-#include "main.h"
 #include "computerscientist.h"
 #include <string>
+#include <vector>
+
 class Domain
 {
 public:

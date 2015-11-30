@@ -1,7 +1,10 @@
 #ifndef CSCIENTIST_H
 #define CSCIENTIST_H
 
-#include "main.h"
+#include <iostream>
+
+
+using namespace std;
 
 class CScientist
 {

@@ -1,7 +1,11 @@
-#include "main.h"
 #include "presentation.h"
+#include "domain.h"
 #include "computerscientist.h"
+#include <iostream>
+#include <conio.h>
+#include <cstdlib>
 
+using namespace std;
 
 Presentation::Presentation() {}
 
@@ -54,6 +58,7 @@ bool Presentation::another()
 {
     cout << "-------------Person added--------------" << endl;
     cout << "Do you wish to add another person (y/n)" << endl;
+
     char ans = getch();
 
     switch (ans)
