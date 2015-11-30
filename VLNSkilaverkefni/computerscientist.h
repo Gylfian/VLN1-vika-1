@@ -1,6 +1,5 @@
 #ifndef CSCIENTIST_H
 #define CSCIENTIST_H
-//#include <iostream>
 #include <string>
 using namespace std;
 

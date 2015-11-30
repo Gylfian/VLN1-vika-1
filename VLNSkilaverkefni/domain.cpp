@@ -25,7 +25,7 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
         for(unsigned int i = 0; i < cSciList.size(); i++)
         {
             if(i + 1 < cSciList.size())
-                strVal = compareString(cSciList[i].name, cSciList[i+1].name);
+                strVal = compareString(cSciList[i].getName(), cSciList[i+1].getName());
             else
                 break;
 
@@ -55,7 +55,7 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
 
     for(unsigned int i = 0; i < cSciList.size(); i++)
     {
-        if(cSciList[i].gender == searchWord)
+        if(cSciList[i].getGender() == searchWord)
         {
             tmp.push_back(cSciList[i]);
         }
@@ -91,23 +91,12 @@ void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, ve
     }
 }
 
-
-void Domain::reverseList(vector<CScientist> &cSciList)
-{
-    vector<CScientist> tmp = cSciList;
-    cSciList.clear();
-    for(size_t i = tmp.size()-1; i >= 0; i--)
-    {
-        cSciList.push_back(tmp[i]);
-    }
-}
-
 int Domain::compareString(string str1, string str2)
 {
     int strVal1 = 0, strVal2 = 0;
     size_t cmp1Length = str1.length(), cmp1Length2 = str2.length();
     size_t lowerLength = min(cmp1Length, cmp1Length2);
-    for(int i = 0; i < lowerLength; i++)
+    for(unsigned int i = 0; i < lowerLength; i++)
     {
         strVal1 = decimalValue(str1[i]);
         strVal2 = decimalValue(str2[i]);
@@ -164,14 +153,9 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
-
-void addToFile(vector<CScientist> &scientists)
-{
-    Data dat1;
-    dat1.writeToFile("scientists.txt", scientists);
-}
 void Domain::addToFile(vector<CScientist> &cSciList)
 {
     Data data;
     data.writeToFile("scientists.txt", cSciList);
+
 }
