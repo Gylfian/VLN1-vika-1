@@ -1,14 +1,9 @@
 #ifndef CSCIENTIST_H
 #define CSCIENTIST_H
-
-<<<<<<< HEAD
-#include "data.h"
-=======
 #include <iostream>
 
 
 using namespace std;
->>>>>>> afd31be918322aafe4e466c49db8b71706cec942
 
 class CScientist
 {
