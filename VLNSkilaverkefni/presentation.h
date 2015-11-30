@@ -2,6 +2,7 @@
 #define PRESENTATION_H
 
 #include "computerscientist.h"
+#include "vector"
 
 class Presentation
 {
@@ -17,11 +18,12 @@ public:
     void alphaAscendingDecending();
     void genderOrder();
     void ascendingDecendingText();
-    void scientistData(CScientist cSci);
+    void scientistData(CScientist &cSci);
     string getInputGender();
     string getInputName();
     string getInputDob();
     string getInputDod();
+    void printList(vector <CScientist> scientists);
 
 
 };

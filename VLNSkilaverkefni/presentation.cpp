@@ -54,12 +54,12 @@ void Presentation::addScientist()
 
     }while(another());
     Domain dom1;
-    dom1.addToFile(scientists);
+    //dom1.addToFile(scientists);
     system("CLS");
     mainPage();
 }
 
-void Presentation::scientistData(CScientist cSci)
+void Presentation::scientistData(CScientist &cSci)
 {
     string name, gender, Dob, Dod;
     name = getInputName();
@@ -94,7 +94,7 @@ string Presentation::getInputGender()
         }break;
         default:{
         cout << "Please select either male or female"<<endl;
-        this->getInputGender();
+        gender = getInputGender();
     }
 
 
@@ -255,3 +255,17 @@ void Presentation::genderOrder()
             displayListOptions();
     }
 }
+
+void Presentation::printList(vector<CScientist> scientists)
+{
+    for (size_t i = 0; i < scientists.size(); i++)
+    {
+        cout << "#" << i+1 << endl;
+        cout << "Name: " << scientists[i].getName()  << endl;
+        cout << "Gender: " << scientists[i].getGender() << endl;
+        cout << "Year of birth: " << scientists[i].getDob() << endl;
+        cout << "Year of death: " << scientists[i].getDod() << endl << endl;
+    }
+
+}
+
