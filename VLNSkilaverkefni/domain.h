@@ -15,10 +15,6 @@ public:
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
     void addToFile(vector<CScientist> &cSciList);
     bool normalizeName(string &name);
-<<<<<<< HEAD
-    void addToFile(vector<CScientist> &scientists);
-=======
->>>>>>> 02b854edf873a85e63693f73f75ac68399ce41bd
 private:
     int  decimalValue(char x);
     int  compareString(string str1, string str2);
