@@ -1,4 +1,5 @@
 #include "domain.h"
+#include "data.h"
 
 Domain::Domain()
 {
@@ -163,8 +164,15 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
+<<<<<<< HEAD
 void addToFile(vector<CScientist> &scientists)
 {
     Data dat1;
     dat1.writeToFile("scientists.txt", scientists);
+=======
+void Domain::addToFile(vector<CScientist> &cSciList)
+{
+    //Data data();
+    //data.writeToFile("scientists.txt", cSciList);
+>>>>>>> 02b854edf873a85e63693f73f75ac68399ce41bd
 }
