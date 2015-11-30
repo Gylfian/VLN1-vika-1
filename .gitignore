@@ -1,5 +1,6 @@
 *.obj
 computerscientist.obj
+presentation.obj
 vlnskilaverkefni.pdb
 *.pro.user
 *.exe
