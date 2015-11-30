@@ -77,6 +77,18 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
    mergeList(cSciList, tmp, tmp2);
 }
 
+void Domain::deleteScientist(vector<CScientist> &cSciList, int index)
+{
+    cSciList.erase(cSciList.begin()+index);
+}
+
+vector<CScientist> Domain::getScientistList()
+{
+    vector<CScientist> cSciList;
+    //Ná í list frá Data
+    return cSciList;
+}
+
 void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, vector<CScientist> vec2)
 {
     cSciList.clear();
@@ -152,10 +164,12 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
+
+/*
 void Domain::addToFile(vector<CScientist> &cSciList)
 {
     Data data;
     data.writeToFile("scientists.txt", cSciList);
 
 }
-
+*/

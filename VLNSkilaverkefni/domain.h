@@ -1,17 +1,19 @@
 #ifndef DOMAIN_H
 #define DOMAIN_H
-#include <algorithm>
 #include "data.h"
+#include <algorithm>
 
 class Domain
 {
 public:
     Domain();
+    vector<CScientist> getScientistList();
     void sortByYear(vector<CScientist> &cSciList, bool byOldest);
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
-    bool normalizeName(string &name);
     void addToFile(vector<CScientist> &cSciList);
+    void deleteScientist(vector<CScientist> &cSciList, int index);
+    bool normalizeName(string &name);
 private:
     int  decimalValue(char x);
     int  compareString(string str1, string str2);
