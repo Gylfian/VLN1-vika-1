@@ -1,10 +1,7 @@
 #ifndef DOMAIN_H
 #define DOMAIN_H
-#include <string>
-#include <vector>
 #include <algorithm>
 #include "data.h"
-#include "computerscientist.h"
 
 class Domain
 {

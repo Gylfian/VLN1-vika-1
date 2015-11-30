@@ -1,5 +1,4 @@
 #include "domain.h"
-#include "data.h"
 
 Domain::Domain()
 {
