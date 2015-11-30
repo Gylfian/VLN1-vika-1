@@ -4,6 +4,7 @@
 #include "computerscientist.h"
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class Domain
 {
