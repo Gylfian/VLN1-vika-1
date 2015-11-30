@@ -20,12 +20,6 @@ public:
     string gender;
     string dateBorn;
     string dateDeath;
-    friend istream & operator >> (istream & input, CScientist & c1);
-    friend ostream & operator << (ostream & output, const CScientist & c1);
-    string getinputName(istream & input);
-    string getinputGender(istream & input);
-    string getinputDob(istream & input);
-    string getinputDod(istream & input);
 
     CScientist();
 private:
