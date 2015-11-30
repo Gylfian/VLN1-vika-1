@@ -13,8 +13,8 @@ public:
     void sortByYear(vector<CScientist> &cSciList, bool byOldest);
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
+    void addToFile(vector<CScientist> &cSciList);
     bool normalizeName(string &name);
-    void addToFile(CScientist sci);
 private:
     int  decimalValue(char x);
     int  compareString(string str1, string str2);
