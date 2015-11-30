@@ -1,18 +1,19 @@
 #ifndef DATA_H
 #define DATA_H
-#include "main.h"
 #include "computerscientist.h"
-#include "presentation.h"
-#include "domain.h"
-#include "data.h"
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
 
 
 class Data
 {
 public:
     Data();
-    void readFromFile(string docName, vector <CScientist> scientists);
-    void writeToFile(string docName, vector <CScientist> scientists);
+    void readFromFile(string docName, vector <CScientist>& scientists);
+    void writeToFile(string docName, vector <CScientist>& scientists);
     friend ostream& operator <<(ostream& stream, const CScientist& scientist);
 };
 

@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "computerscientist.h"
+#include <string>
 class Domain
 {
 public:

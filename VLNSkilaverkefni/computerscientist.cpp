@@ -4,24 +4,24 @@ CScientist::CScientist()
 {
     name = "";
     gender ="";
-    dateBorn =0;
-    dateDeath =0;
+    dateBorn = "";
+    dateDeath = "";
 }
 
-string CScientist::getName(){
+string CScientist::getName() const{
     return name;
 }
 
-string CScientist::getGender(){
+string CScientist::getGender() const{
    return gender;
 }
 
 
-int CScientist::getDob(){
+string CScientist::getDob() const{
    return dateBorn;
 }
 
-int CScientist::getDod(){
+string CScientist::getDod() const{
    return dateDeath;
 }
 
@@ -32,10 +32,10 @@ void CScientist::setName(string nameToSet){
 void CScientist::setGender(string genderToSet){
     gender=genderToSet;
 }
-void CScientist::setDob(int dateToSet){
+void CScientist::setDob(string dateToSet){
     dateBorn=dateToSet;
 }
-void CScientist::SetDod(int dateToSet){
+void CScientist::SetDod(string dateToSet){
     dateDeath=dateToSet;
 }
 
@@ -45,9 +45,9 @@ istream & operator >> (istream & input, CScientist & c1){
     c1.name=enteredName;
     string enteredGender = c1.getinputGender(input);
     c1.gender=enteredGender;
-    int enteredDob = c1.getinputDob(input);
+    string enteredDob = c1.getinputDob(input);
     c1.dateBorn=enteredDob;
-    int enteredDod = c1.getinputDod(input);
+    string enteredDod = c1.getinputDod(input);
     c1.dateDeath=enteredDod;
     return input;
 }
@@ -84,14 +84,14 @@ cout << "Enter gender: ";
 input >> gender;
 return gender;
 }
-int CScientist::getinputDob(istream & input){
-int Dob;
+string CScientist::getinputDob(istream & input){
+string Dob;
 cout << "Enter year of birth: ";
 input >> Dob;
 return Dob;
 }
-int CScientist::getinputDod(istream & input){
-int Dod;
+string CScientist::getinputDod(istream & input){
+string Dod;
 cout << "Enter year of death: ";
 input >> Dod;
 return Dod;
