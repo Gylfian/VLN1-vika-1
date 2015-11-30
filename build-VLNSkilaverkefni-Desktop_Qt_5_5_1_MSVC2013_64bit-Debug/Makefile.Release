@@ -179,9 +179,7 @@ release\presentation.obj: ..\VLNSkilaverkefni\presentation.cpp ../VLNSkilaverkef
 		../VLNSkilaverkefni/domain.h \
 		../VLNSkilaverkefni/data.h
 
-release\computerscientist.obj: ..\VLNSkilaverkefni\computerscientist.cpp ../VLNSkilaverkefni/computerscientist.h \
-		../VLNSkilaverkefni/domain.h \
-		../VLNSkilaverkefni/data.h
+release\computerscientist.obj: ..\VLNSkilaverkefni\computerscientist.cpp ../VLNSkilaverkefni/computerscientist.h
 
 ####### Install
 

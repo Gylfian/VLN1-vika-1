@@ -179,9 +179,7 @@ debug\presentation.obj: ..\VLNSkilaverkefni\presentation.cpp ../VLNSkilaverkefni
 		../VLNSkilaverkefni/domain.h \
 		../VLNSkilaverkefni/data.h
 
-debug\computerscientist.obj: ..\VLNSkilaverkefni\computerscientist.cpp ../VLNSkilaverkefni/computerscientist.h \
-		../VLNSkilaverkefni/domain.h \
-		../VLNSkilaverkefni/data.h
+debug\computerscientist.obj: ..\VLNSkilaverkefni\computerscientist.cpp ../VLNSkilaverkefni/computerscientist.h
 
 ####### Install
 
