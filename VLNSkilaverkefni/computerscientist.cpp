@@ -74,9 +74,6 @@ cout << "Enter name: ";
         if(namecheck==true){
         return name;
         }
-        else{
-        cout << "Please enter a valid name: ";
-        }
     }
 return name;
 }
@@ -90,11 +87,13 @@ char ans = getch();
         case ('m'):
         {
         gender = "Male";
+        cout << gender<<" selected"<< endl;
         }break;
         case ('F'):
         case ('f'):
         {
         gender = "Female";
+        cout << gender<<" selected"<< endl;
         }break;
     default:{
         cout << "Please select either male or female"<<endl;
@@ -103,7 +102,6 @@ char ans = getch();
 
 
 }
-    cout << gender<<" selected"<< endl;
     return gender;
 }
 string CScientist::getinputDob(istream & input){
