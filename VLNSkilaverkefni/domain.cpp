@@ -152,11 +152,11 @@ bool Domain::normalizeName(string &name)
     }
     return true;
 }
-/*
+
 void Domain::addToFile(vector<CScientist> &cSciList)
 {
     Data data;
     data.writeToFile("scientists.txt", cSciList);
 
 }
-*/
+

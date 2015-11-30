@@ -1,8 +1,8 @@
 #ifndef DATA_H
 #define DATA_H
-#include "computerscientist.h"
 #include <fstream>
 #include <vector>
+#include "computerscientist.h"
 
 class Data
 {

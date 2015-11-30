@@ -1,10 +1,9 @@
 #ifndef PRESENTATION_H
 #define PRESENTATION_H
-
-#include "domain.h"
 #include <iostream>
 #include <conio.h>
 #include <cstdlib>
+#include "domain.h"
 
 class Presentation
 {
