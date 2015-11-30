@@ -1,6 +1,9 @@
 *.obj
 computerscientist.obj
 presentation.obj
+main.obj
+data.obj
+domain.obj
 vlnskilaverkefni.pdb
 *.pro.user
 *.exe
