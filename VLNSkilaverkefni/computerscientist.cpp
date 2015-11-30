@@ -1,6 +1,6 @@
 #include "computerscientist.h"
 #include "domain.h"
-#include <conio.h>
+//#include <conio.h>
 
 CScientist::CScientist()
 {

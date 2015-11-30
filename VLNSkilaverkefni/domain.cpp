@@ -163,7 +163,8 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
-void addToFile(CScientist sci)
+void addToFile(vector<CScientist> &scientists)
 {
-    //writeToFile("scientists.txt", sci);
+    Data dat1;
+    dat1.writeToFile("scientists.txt", scientists);
 }

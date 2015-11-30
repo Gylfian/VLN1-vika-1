@@ -14,7 +14,7 @@ public:
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
     bool normalizeName(string &name);
-    void addToFile(CScientist sci);
+    void addToFile(vector<CScientist> &scientists);
 private:
     int  decimalValue(char x);
     int  compareString(string str1, string str2);

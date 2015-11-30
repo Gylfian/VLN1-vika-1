@@ -44,12 +44,17 @@ void Presentation::options()
 void Presentation::addScientist()
 {
     CScientist cSci;
+    vector<CScientist> scientists;
 
     do
     {
+        system("CLS");
         scientistData(cSci);
+        scientists.push_back(cSci);
 
     }while(another());
+    Domain dom1;
+    dom1.addToFile(scientists);
     system("CLS");
     mainPage();
 }
