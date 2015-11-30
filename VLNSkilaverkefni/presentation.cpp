@@ -6,7 +6,6 @@
 #include <conio.h>
 #include <cstdlib>
 
-
 using namespace std;
 
 Presentation::Presentation() {}
@@ -48,13 +47,85 @@ void Presentation::addScientist()
 
     do
     {
-        cin >> cSci;
-        //addToFile(cSci);
-
+        scientistData(cSci);
 
     }while(another());
     system("CLS");
     mainPage();
+}
+
+void Presentation::scientistData(CScientist cSci)
+{
+    string name, gender, Dob, Dod;
+    name = getInputName();
+    gender = getInputGender();
+    Dob = getInputDob();
+    Dod = getInputDod();
+
+    cSci.setName(name);
+    cSci.setGender(gender);
+    cSci.setDob(Dob);
+    cSci.SetDod(Dod);
+}
+
+string Presentation::getInputGender()
+{
+    string gender;
+    cout << "Is the scientist [m]ale or [f]emale ? " << endl;
+    char ans = getch();
+        switch (ans)
+        {
+        case ('M'):
+        case ('m'):
+        {
+            gender = "Male";
+            cout << gender<<" selected"<< endl;
+        }break;
+        case ('F'):
+        case ('f'):
+        {
+        gender = "Female";
+        cout << gender<<" selected"<< endl;
+        }break;
+        default:{
+        cout << "Please select either male or female"<<endl;
+        this->getInputGender();
+    }
+
+
+}
+    return gender;
+}
+
+string Presentation::getInputName()
+{
+    string name;
+    Domain d1;
+    bool namecheck = false;
+    cout << "Enter name: ";
+    while(namecheck==false)
+    {
+        getline(cin,name);
+        namecheck = d1.normalizeName(name);
+    }
+    return name;
+}
+
+
+string Presentation::getInputDob()
+{
+    string Dob;
+    cout << "Enter year of birth: ";
+    cin >> Dob;
+    return Dob;
+}
+
+string Presentation::getInputDod()
+{
+    string Dod;
+    cout << "Enter year of death: ";
+    cin >> Dod;
+    return Dod;
 }
 
 bool Presentation::another()

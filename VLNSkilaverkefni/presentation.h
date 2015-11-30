@@ -17,6 +17,12 @@ public:
     void alphaAscendingDecending();
     void genderOrder();
     void ascendingDecendingText();
+    void scientistData(CScientist cSci);
+    string getInputGender();
+    string getInputName();
+    string getInputDob();
+    string getInputDod();
+
 
 };
 
