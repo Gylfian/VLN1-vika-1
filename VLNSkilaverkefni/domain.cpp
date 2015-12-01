@@ -139,6 +139,86 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
 }
 
 /*
+ * Name: searchByName
+ * Parameter/s: vector<CScientist> cSciList, string name
+ * Description: Used to search in a list for persons by specific name.
+ * Usage: vector<CScientist> vec = searchByName(cSciList, "Jón Baldursson"):
+ * (vector<CScientist>)Output/Return: Retrieves everyone that is, in this case named "Jón Baldursson".
+ */
+vector<CScientist> Domain::searchByName(vector<CScientist> cSciList, string name)
+{
+    vector<CScientist> searchResults;
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        if(cSciList[i].getName() == name)
+        {
+            searchResults.push_back(cSciList[i]);
+        }
+    }
+    return searchResults;
+}
+
+/*
+ * Name: searchByGender
+ * Parameter/s: vector<CScientist> cSciList, string gender
+ * Description: Used to search in a list for persons by specific gender.
+ * Usage: vector<CScientist> vec = searchByGender(cSciList, "Male"):
+ * (vector<CScientist>)Output/Return: Retrieves everyone that is male.
+ */
+vector<CScientist> Domain::searchByGender(vector<CScientist> cSciList, string gender)
+{
+    vector<CScientist> searchResults;
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        if(cSciList[i].getGender() == gender)
+        {
+            searchResults.push_back(cSciList[i]);
+        }
+    }
+    return searchResults;
+}
+
+/*
+ * Name: searchByDateBorn
+ * Parameter/s: vector<CScientist> cSciList, string dateBorn
+ * Description: Used to search in a list by date of born.
+ * Usage: vector<CScientist> vec = searchByDateBorn(cSciList, "1905"):
+ * (vector<CScientist>)Output/Return: Retrieves everyone with specific born date, in this case 1905
+ */
+vector<CScientist> Domain::searchByDateBorn(vector<CScientist> cSciList, string dateBorn)
+{
+    vector<CScientist> searchResults;
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        if(cSciList[i].getDob() == dateBorn)
+        {
+            searchResults.push_back(cSciList[i]);
+        }
+    }
+    return searchResults;
+}
+
+/*
+ * Name: searchByDateDeath
+ * Parameter/s: vector<CScientist> cSciList, int dateDeath
+ * Description: Used to search in a list by date of death.
+ * Usage: vector<CScientist> vec = searchByDateDeath(cSciList, "1905"):
+ * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
+ */
+vector<CScientist> Domain::searchByDateDeath(vector<CScientist> cSciList, string dateDeath)
+{
+    vector<CScientist> searchResults;
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        if(cSciList[i].getDod() == dateDeath)
+        {
+            searchResults.push_back(cSciList[i]);
+        }
+    }
+    return searchResults;
+}
+
+/*
  * Name: deleteScientist
  * Parameter/s: vector<CScientist> &cSciList, int index
  * Description: Eyðir út ákveðnum aðila sem er stjórnað af indexi.
