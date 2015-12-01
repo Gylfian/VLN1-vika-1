@@ -14,6 +14,7 @@ public:
     vector<CScientist> searchByDateDeath(vector<CScientist> cSciList, string dateDeath);
     void sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice);
     void addToFile(vector<CScientist> &cSciList);
+    vector<CScientist> readFile();
     void deleteScientist(vector<CScientist> &cSciList, int index);
     bool normalizeName(string &name);
 private:

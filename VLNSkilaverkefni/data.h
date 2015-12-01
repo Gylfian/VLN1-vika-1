@@ -9,7 +9,7 @@ class Data
 public:
     Data();
     friend ostream& operator <<(ostream& stream, const CScientist& scientist);
-    void readFromFile(string docName);
+    vector<CScientist> readFromFile(string docName);
     void writeToFile(string docName, vector <CScientist>& scientists);
 
 

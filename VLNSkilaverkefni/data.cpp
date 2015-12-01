@@ -4,7 +4,7 @@ Data::Data()
 {
 }
 
-void Data::readFromFile(string docName)
+vector<CScientist> Data::readFromFile(string docName)
 {
     ifstream inStream;
     vector <CScientist> scientists;
@@ -21,6 +21,7 @@ void Data::readFromFile(string docName)
 
     }
     inStream.close();
+    return scientists;
 }
 
 ostream& operator <<(ostream& stream, const CScientist& scientist)
