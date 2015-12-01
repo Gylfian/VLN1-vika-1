@@ -6,12 +6,20 @@
 class Domain
 {
 public:
+
+    /*
+     * Name: Domain
+     * Parameter/s: None
+     * Description: Default constructor for Domain class
+     * Usage:
+     *
+     */
     Domain();
 
     /*
      * Name: getScientistList
      * Parameter/s: none
-     * Description: Skilar lista af öllum scientists inn í skrá.
+     * Description: Returns a list of scientists from text file
      * Usage: vector<CScientist> list = getScientistList()
      * (vector<CScientist>)Output/Return: list = allScientists
      */
@@ -52,6 +60,14 @@ public:
      * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
      */
     vector<CScientist> searchByDateDeath(vector<CScientist> cSciList, string dateDeath);
+
+    /*
+     * Name: sortBy
+     * Parameter/s: vector<CScientist> &cSciList, int dateDeath
+     * Description: Takes in choice of sorting method from user and salls appropriate sorting function
+     * Usage: vector<CScientist> vec = searchByDateDeath(cSciList, "1905"):
+     * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
+     */
     void sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice);
     void addToFile(vector<CScientist> &cSciList);
     vector<CScientist> readFile();
@@ -59,15 +75,15 @@ public:
     /*
      * Name: deleteScientist
      * Parameter/s: vector<CScientist> &cSciList, int index
-     * Description: Eyðir út ákveðnum aðila sem er stjórnað af indexi.
+     * Description: Deletes a specific scientist from the list
      * Usage: deleteScientist(cSciList, 5);
-     * (vector<CScientist>)Output/Return: 5th element eytt út.
+     * (vector<CScientist>)Output/Return: 5th element deleted.
      */
     void deleteScientist(vector<CScientist> &cSciList, int index);
 
     /*
      * Name: normalizeName
-     * Description: Notað til þess að laga nöfn sem eru illa eða rangt sett upp.
+     * Description: Fixes names that are badly input
      * Usage: normalizeName("jÓn bAlduRSsOn")
      * (str)Output/Return: Jón Baldursson
      */
@@ -76,28 +92,27 @@ public:
     /*
      * Name: sortByYear
      * Parameter/s: vector<CScientist> &cSciList, bool byOldest
-     * Description: Sortar listann cSciList eftir fæðingarári
+     * Description: Sorts the list after birthyear
      * Usage: sortByYear(cSciList, true)
-     * (void)Output/Return: Listi rearranged, cSciList raðast eftir fæðingarári
+     * (void)Output/Return: List rearranged, cSciList sorted after birthyear
      */
     void sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn);
 
     /*
      * Name: sortByGender
      * Parameter/s: vector<CScientist> &cSciList, bool byMale, bool byAscending
-     * Description: Sortar listann cSciList eftir kyni, með stafrófsröð eða öfugri stafrófsröð.
+     * Description: Sorts the list cSciList by gender, in alphabetic- or reverse alpabetic order
      * Usage: sortByGender(cSciList, true, false)
-     * (void)Output/Return: Listi rearranged, male koma first en í öfugri stafrófsröð
+     * (void)Output/Return: List rearranged, males come first in desending alphabetic order
      */
-
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
 
     /*
      * Name: sortByAlphabet
      * Parameter/s: vector<CScientist> &cSciList, bool byAscending
-     * Description: Sortar listann cSciList í stafrófsröð eða öfugri stafrófsröð
+     * Description: Sorts the list cSciList in alphabetic- or reverse alpabetic order
      * Usage: sortByAlphabet(cSciList, true)
-     * (void)Output/Return: Listi rearranged, cSciList kemur í réttri stafrófsröð
+     * (void)Output/Return: List rearranged, cSciList comes in alphabetic order
      */
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
 
@@ -107,7 +122,7 @@ private:
     /*
      * Name: decimalValue
      * Parameter/s: char chr
-     * Description: Convertar char yfir í decimal ASCII gildi
+     * Description: Converts char to decimal ASCII values
      * Usage: decimalValue(a)
      * (int)Output/Return: 49
      */
@@ -116,7 +131,7 @@ private:
     /*
      * Name: compareString
      * Parameter/s: string str1, string str2
-     * Description: Ber saman 2 strengi. Skilar 1 ef str1 er fyrr í stafróinu, skilar 2 ef str2 er fyrr í strafróinu. Skilar 0 ef það er jafnt.
+     * Description: Compares two strings. Returns 1 if str1 comes before str2 in the alphabet, returns 2 ef str2 comes before. Returns 0 if strings are equal.
      * Usage: compareString("Karl", "Andri")
      * (int)Output/Return: 2
      */
@@ -125,7 +140,7 @@ private:
     /*
      * Name: compareYears
      * Parameter/s: int year1, int year2
-     * Description: Ber saman 2 integera og skilar þeim minni
+     * Description: Compares two integers, returns smaller
      * Usage: compareYears(2000, 1000)
      * (int)Output/Return: 1000
      */
@@ -134,9 +149,9 @@ private:
     /*
      * Name: normalizeList
      * Parameter/s: vector<CScientist>  &cSciList, vector<int> listYear
-     * Description: cSciList er normalizaður frá integer vector yfir í CScientist.dateBorn format. Undir function fyrir sortByYear.
+     * Description: cSciList is normalized from integer to vector to CScientist.dateBorn format. Underfunction for sortByYear.
      * Usage: normalizeList(cSciList, listYear)
-     * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
+     * (void)Output/Return: Listi rearranged, cSciList is now right indexed in comparision to listYear
      */
     void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, bool byBorn);
     void reverseList(vector<CScientist> &cSciList);
@@ -144,7 +159,7 @@ private:
     /*
      * Name: mergeList
      * Parameter/s: vector<CScientist> &cSciList, vector<CScientist> vec1, vector<CScientist> vec2
-     * Description: Tekur 3 lista. Fyrsti (pass by reference) er aðal vectorinn og hinir 2 eru settir inn í hann.
+     * Description: Takes in three lists. First (pass by reference) is the main list and the other two lists are added to it
      * Usage: compareString(mainList, templist, templist2)
      * (void)Output/Return: mainList = templist + templist2 || temp2list + templist
      */
@@ -152,7 +167,7 @@ private:
     /*
      * Name: swapValues
      * Parameter/s: vector<CScientist> &cSciList, int index1, int index2
-     * Description: Skiptir á values inn í CScientist vector. Hverju er skipt er stjórnað af 2 index breytum.
+     * Description: Swaps values in CScientist vector. What is swapped is is controlled by two index variables
      * Usage: swapValues(vector, 0, 1)
      * (void)Output/Return: vector[(old)0] -> vector[1] && vector[(old)1] -> vector[0]
      */
@@ -160,7 +175,7 @@ private:
     /*
      * Name: swapIntValues
      * Parameter/s: vector<int> &cSciList, int index1, int index2
-     * Description: Skiptir á values inn í integer vector. Hverju er skipt er stjórnað af 2 index breytum.
+     * Description: Swaps values in an integer vector. What is swapped is is controlled by two index variables
      * Usage: swapIntValues(vector, 0, 1)
      * (void)Output/Return: vector[(old)0] -> vector[1] && vector[(old)1] -> vector[0]
      */
