@@ -165,10 +165,6 @@ void Presentation::listOptions()
         {
             whichOrder(ans);
         }break;
-        case ('4'):
-        {
-            whichOrder(ans);
-        }break;
         default:
             mainPage();
 
@@ -190,10 +186,6 @@ void Presentation::whichOrder(char pChoice)
         case('3'):
         {
             yearBornText();
-        }break;
-        case('4'):
-        {
-            yearDeathText();
         }break;
         default:
             listOptions();
@@ -249,6 +241,9 @@ void Presentation::searchOptions()
     cout << "|______________________________________|" << endl;
 
     char ans = getch();
+    Domain d1;
+    vector <CScientist> scientist;
+
     switch(ans)
     {
         case ('1'):
@@ -269,7 +264,39 @@ void Presentation::searchOptions()
         }break;
         default:
             mainPage();
+    }
 
+}
+
+string Presentation::getNameSearch()
+{
+    string name;
+    cout << "Enter the name you wish to search for: ";
+    getline(cin, name);
+    return name;
+}
+
+string Presentation::getGenderSearch()
+{
+    cout << " __________________" << endl;
+    cout << "|-1) Male search---|" << endl;
+    cout << "|-2) Female search-|" << endl;
+    cout << "|__________________|" << endl;
+
+    char ans = getch();
+
+    switch (ans)
+    {
+        case ('1'):
+        {
+            return "Male";
+        }break;
+        case ('2'):
+        {
+            return "Female";
+        }break;
+        default:
+            searchOptions();
     }
 }
 
@@ -306,7 +333,6 @@ void Presentation::listOptionsText()
     cout << "|-1) Alphabetically-------------------|" << endl;
     cout << "|-2) By gender------------------------|" << endl;
     cout << "|-3) By year of birth-----------------|" << endl;
-    cout << "|-4) By year of death-----------------|" << endl;
     cout << "|-Press any other key to go back------|" << endl;
     cout << "|_____________________________________|" << endl;
 }
@@ -341,12 +367,3 @@ void Presentation::yearBornText()
     cout << "|_____________________________________|" << endl;
 }
 
-void Presentation::yearDeathText()
-{
-    cout << " _____________________________________" << endl;
-    cout << "|-In what order do you want the list?-|" << endl;
-    cout << "|-1) Most recent death----------------|" << endl;
-    cout << "|-2) The first to pass away-----------|" << endl;
-    cout << "|-Press any other key to go back------|" << endl;
-    cout << "|_____________________________________|" << endl;
-}

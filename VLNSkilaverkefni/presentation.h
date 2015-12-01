@@ -24,10 +24,13 @@ private:
     void printList(vector <CScientist> scientists);
     void printListOptions();
     void searchOptions();
+    string getNameSearch();
+    string getGenderSearch();
+    string getDobSearch();
+    string getDodSearch();
     void anotherText();
     void listOptionsText();
     void genderOrderText();
-    void yearDeathText();
     void yearBornText();
     void ascendingDecendingText();
 

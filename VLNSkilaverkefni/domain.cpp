@@ -32,21 +32,11 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
         case('3'):
             if(cChoice == '1')
             {
-                sortByYear(cSciList, true);
+                sortByYear(cSciList, false);
             }
             else
             {
-                sortByYear(cSciList, false);
-            }
-            break;
-        case('4'):
-            if(cChoice == '1')
-            {
                 sortByYear(cSciList, true);
-            }
-            else
-            {
-                sortByYear(cSciList, false);
             }
             break;
 
