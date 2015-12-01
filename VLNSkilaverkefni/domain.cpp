@@ -78,7 +78,7 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
         for(unsigned int i = 0; i < cSciList.size(); i++)
         {
             if(i + 1 < cSciList.size())
-                strVal = compareString(cSciList[i].getName(), cSciList[i+1].getName());
+                strVal = compareString(cSciList[i].getName(), cSciList[i+1].getName()); //Fá streng sem er fyrr í stafrófi
             else
                 break;
 
@@ -139,36 +139,6 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
 }
 
 /*
- * Name: normalizeList
- * Parameter/s: vector<CScientist> &cSciList, bool byMale, bool byAscending
- * Description: Sortar listann cSciList eftir kyni, með stafrófsröð eða öfugri stafrófsröð.
- * Usage: sortByGender(cSciList, true, false)
- * (void)Output/Return: Listi rearranged, male koma first en í öfugri stafrófsröð
- */
-void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
-{
-    for(unsigned int i = 0; i < listYear.size(); i++)
-    {
-        for(unsigned int j = 0; j < cSciList.size(); j++)
-        {
-            string strnum = cSciList[j].getDob();
-            int result = 0;
-            stringstream convert(strnum);
-            if ( !(convert >> result) )
-                result = 0;
-
-            if(listYear[i] == result)
-            {
-                if(cSciList[i].getDob() != cSciList[j].getDob())
-                {
-                    swapValues(cSciList, i, j);
-                }
-            }
-        }
-    }
-}
-
-/*
  * Name: deleteScientist
  * Parameter/s: vector<CScientist> &cSciList, int index
  * Description: Eyðir út ákveðnum aðila sem er stjórnað af indexi.
@@ -177,11 +147,11 @@ void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
  */
 void Domain::deleteScientist(vector<CScientist> &cSciList, int index)
 {
-    cSciList.erase(cSciList.begin()+index);
+    cSciList.erase(cSciList.begin()+index); //.begin == index[0]
 }
 
 /*
- * Name: mergeList
+ * Name: getScientistList
  * Parameter/s: none
  * Description: Skilar lista af öllum scientists inn í skrá.
  * Usage: vector<CScientist> list = getScientistList()
@@ -224,10 +194,11 @@ void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, ve
 int Domain::compareString(string str1, string str2)
 {
     int strVal1 = 0, strVal2 = 0;
-    size_t cmp1Length = str1.length(), cmp1Length2 = str2.length();
-    size_t lowerLength = min(cmp1Length, cmp1Length2);
+    size_t cmp1Length = str1.length(), cmp1Length2 = str2.length();  //Fá lengd af strengjum sem eru inní parametrum.
+    size_t lowerLength = min(cmp1Length, cmp1Length2);               //lowerLength = minni talan af cmp1Length og cmp2Length
     for(unsigned int i = 0; i < lowerLength; i++)
     {
+        //Convert char í ASCII decimal
         strVal1 = decimalValue(str1[i]);
         strVal2 = decimalValue(str2[i]);
         if(strVal1 < strVal2)
@@ -349,6 +320,36 @@ bool Domain::normalizeName(string &name)
         }
     }
     return true;
+}
+
+/*
+ * Name: normalizeList
+ * Parameter/s: vector<CScientist>  &cSciList, vector<int> listYear
+ * Description: cSciList er normalizaður frá integer vector yfir í CScientist.dateBorn format. Undir function fyrir sortByYear.
+ * Usage: normalizeList(cSciList, listYear)
+ * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
+ */
+void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
+{
+    for(unsigned int i = 0; i < listYear.size(); i++)
+    {
+        for(unsigned int j = 0; j < cSciList.size(); j++)
+        {
+            string strnum = cSciList[j].getDob();
+            int result = 0;
+            stringstream convert(strnum);
+            if ( !(convert >> result) )
+                result = 0;
+
+            if(listYear[i] == result)
+            {
+                if(cSciList[i].getDob() != cSciList[j].getDob())
+                {
+                    swapValues(cSciList, i, j);
+                }
+            }
+        }
+    }
 }
 
 
