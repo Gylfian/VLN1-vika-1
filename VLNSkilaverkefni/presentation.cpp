@@ -1,6 +1,6 @@
 #include "presentation.h"
 
-Presentation::Presentation() {}
+Presentation::Presentation(){}
 
 void Presentation::mainPage()
 {
@@ -48,7 +48,7 @@ void Presentation::addScientist()
     Domain dom1;
     //dom1.addToFile(scientists);
     system("CLS");
-    mainPage();
+    printList(scientists);
 }
 
 void Presentation::scientistData(CScientist& cSci)
@@ -226,7 +226,30 @@ void Presentation::printList(vector<CScientist> scientists)
         cout << "Year of birth: " << scientists[i].getDob() << endl;
         cout << "Year of death: " << scientists[i].getDod() << endl << endl;
     }
+    cout << " ____________________________________________ " << endl;
+    cout << "|-Do you wish to [d]elete an entry?----------|" << endl;
+    cout << "|-Press any other key to go to the main menu-|" << endl;
+    cout << "|____________________________________________|" << endl;
+    deleteOptions();
 
+}
+
+void Presentation::deleteOptions()
+{
+    char ans = getch();
+    system("CLS");
+
+    switch(ans)
+    {
+        case ('d'):
+        case ('D'):
+        {
+
+        }
+        break;
+        default:
+            mainPage();
+    }
 }
 
 void Presentation::anotherText()

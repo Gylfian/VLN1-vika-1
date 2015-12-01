@@ -39,3 +39,4 @@ ostream& operator <<(ostream& stream, const CScientist& scientist)
     return stream;
 }
 */
+

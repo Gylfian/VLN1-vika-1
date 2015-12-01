@@ -24,6 +24,7 @@ private:
     string getInputDob();
     string getInputDod();
     void printList(vector <CScientist> scientists);
+    void deleteOptions();
     void anotherText();
     void listOptionsText();
     void genderOrderText();
