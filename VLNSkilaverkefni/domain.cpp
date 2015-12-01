@@ -53,13 +53,7 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
     }
 }
 
-/*
- * Name: sortByYear
- * Parameter/s: vector<CScientist> &cSciList, bool byOldest
- * Description: Sortar listann cSciList eftir fæðingarári
- * Usage: sortByYear(cSciList, true)
- * (void)Output/Return: Listi rearranged, cSciList raðast eftir fæðingarári
- */
+
 void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn)
 {
     int origSwapCounter = 0, swapCounter = 0;
