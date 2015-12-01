@@ -80,7 +80,7 @@ public:
      * Usage: sortByYear(cSciList, true)
      * (void)Output/Return: Listi rearranged, cSciList raðast eftir fæðingarári
      */
-    void sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn);
+    void sortByYear(vector<CScientist> &cSciList, bool byOldest);
 
     /*
      * Name: sortByGender
@@ -138,7 +138,7 @@ private:
      * Usage: normalizeList(cSciList, listYear)
      * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
      */
-    void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, bool byBorn);
+    void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear);
     void reverseList(vector<CScientist> &cSciList);
 
     /*
