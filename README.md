@@ -33,13 +33,13 @@ Presentation
 	getInputGender - Spyr notenda um kyn tölvunarfræðings
 	getInputDob - Spyr notenda um og les inn fæðingarár tölvunarfræðings
 	detInputDod - Spyr notenda um og les inn dánarár tölvunarfræðings
-	another - Spyr notenda hvort hann vilji birta annan tölvunarfræðing
-	displayListOptions - Spyr notenda í hvaða röð hann vilji birta lista af tölvunarfræðingum
+	anotherText - Spyr notenda hvort hann vilji birta annan tölvunarfræðing
+	listOptionsText - Spyr notenda í hvaða röð hann vilji birta lista af tölvunarfræðingum
 	listOptions - Tekur við vali frá notenda um í hvaða röð eigi að byggja listann.
 	ascendingDecendingText - Birtir notenda valmynd sem býður upp á að birta lista í hækkandi eða 
 	lækkandi röð
 	alphaAscendingDecending - Tekur við vali um hvort stafrófsraðaður listi eigi
 	að vera birtur í hækkandi eða lækkandi röð.
-	genderOrder - Spyr notenda hvort birta eigi kynraðaðan lista með körlum eða konum fyrst
+	genderOrderText - Spyr notenda hvort birta eigi kynraðaðan lista með körlum eða konum fyrst
 
 	
