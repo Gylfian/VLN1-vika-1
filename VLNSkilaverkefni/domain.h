@@ -25,6 +25,8 @@ public:
      */
     vector<CScientist> getScientistList();
 
+    vector<CScientist> search(vector<CScientist> cSciList, char searchVal, string searchString);
+
     /*
      * Name: searchByName
      * Parameter/s: vector<CScientist> cSciList, string name
@@ -89,6 +91,8 @@ public:
      */
     bool normalizeName(string &name);
 
+private:
+
     /*
      * Name: sortByYear
      * Parameter/s: vector<CScientist> &cSciList, bool byOldest
@@ -96,7 +100,7 @@ public:
      * Usage: sortByYear(cSciList, true)
      * (void)Output/Return: List rearranged, cSciList sorted after birthyear
      */
-    void sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn);
+    void sortByYear(vector<CScientist> &cSciList, bool byOldest);
 
     /*
      * Name: sortByGender
@@ -116,7 +120,6 @@ public:
      */
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
 
-private:
     vector<int> vecStrToInt(vector<CScientist> cSciList);
 
     /*
@@ -153,7 +156,7 @@ private:
      * Usage: normalizeList(cSciList, listYear)
      * (void)Output/Return: Listi rearranged, cSciList is now right indexed in comparision to listYear
      */
-    void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, bool byBorn);
+    void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear);
     void reverseList(vector<CScientist> &cSciList);
 
     /*

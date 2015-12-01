@@ -7,6 +7,17 @@ class CScientist
 {
 public:
 
+    CScientist();
+
+    /*
+     * Name: CScientist
+     * Parameter/s: string cName, string cGender, string date1, string date2
+     * Description: Constructor for the CScientist class
+     * Usage: scientist1(George Bush, Female, 2000, 2015);
+     * (int)Output/Return: The scientist is is now resgistered as Gerge Bush, female, born in 1992 and died in 2015
+     */
+    CScientist(string cName, string cGender, string date1, string date2);
+
     /*
      * Name: getName
      * Parameter/s: None
@@ -48,21 +59,43 @@ public:
      * Name: setName
      * Parameter/s: string nameToSet
      * Description: Sets the parameter nameToSet as the scientists' name
-     * Usage: scientist1.setName(Charlie Brown)
-     * (int)Output/Return: The scientist name is now Charlie
+     * Usage: scientist1.setName(Charlie Brown);
+     * (int)Output/Return: The scientist name is now Charlie Brown
      */
     void setName(string nameToSet);
+
+    /*
+     * Name: setGender
+     * Parameter/s: string genderToSet
+     * Description: Sets the parameter genderToSet as the scientists' gender
+     * Usage: scientist1.setGender(Female);
+     * (int)Output/Return: The scientist gender os now female
+     */
     void setGender(string genderToSet);
+
+    /*
+     * Name: setDob
+     * Parameter/s: string dateToSet
+     * Description: Sets the parameter dateToSet as the scientists' birth year
+     * Usage: scientist1.setDob(1992);
+     * (int)Output/Return: The scientists' birth year is now 1992
+     */
     void setDob(string dateToSet);
+
+    /*
+     * Name: setDod
+     * Parameter/s: string dateToSet
+     * Description: Sets the parameter dateToSet as the scientists' year of death
+     * Usage: scientist1.setDod(2015);
+     * (int)Output/Return: The scientists' year of death is now 2015
+     */
     void SetDod(string dateToSet);
+
+private:
     string name;
     string gender;
     string dateBorn;
     string dateDeath;
-
-    CScientist();
-    CScientist(string cName, string cGender, string date1, string date2);
-private:
 
 };
 

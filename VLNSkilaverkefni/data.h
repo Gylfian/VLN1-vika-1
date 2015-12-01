@@ -8,16 +8,6 @@ class Data
 {
 public:
 
-
-    /*
-     * Name: Data
-     * Parameter/s: None
-     * Description: Default constructor for the data class
-     * Usage:
-     * (void)Output/Return:
-     */
-    //Data();
-
     /*
      * Name: operator <<
      * Parameter/s: ostream& stream, const CScientist& scientist

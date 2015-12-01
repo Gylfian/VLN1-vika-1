@@ -1,7 +1,5 @@
 #include "presentation.h"
 
-Presentation::Presentation(){}
-
 void Presentation::mainPage()
 {
     cout << " ________________MAIN_MENU_______________" << endl;
@@ -191,10 +189,6 @@ void Presentation::whichOrder(char pChoice)
         {
             yearBornText();
         }break;
-        case('4'):
-        {
-            yearDeathText();
-        }break;
         default:
             listOptions();
     }
@@ -340,16 +334,6 @@ void Presentation::yearBornText()
     cout << "|-In what order do you want the list?-|" << endl;
     cout << "|-1) Youngest first-------------------|" << endl;
     cout << "|-2) Oldest first---------------------|" << endl;
-    cout << "|-Press any other key to go back------|" << endl;
-    cout << "|_____________________________________|" << endl;
-}
-
-void Presentation::yearDeathText()
-{
-    cout << " _____________________________________" << endl;
-    cout << "|-In what order do you want the list?-|" << endl;
-    cout << "|-1) Most recent death----------------|" << endl;
-    cout << "|-2) The first to pass away-----------|" << endl;
     cout << "|-Press any other key to go back------|" << endl;
     cout << "|_____________________________________|" << endl;
 }
