@@ -7,9 +7,73 @@ Domain::Domain()
 
 void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 {
+    int origSwapCounter = 0, swapCounter = 0;
+    vector<int> listYear;
+    listYear.reserve(cSciList.size());
+    listYear = vecStrToInt(cSciList);
+    while(true)
+    {
+        origSwapCounter = swapCounter;
+        for(unsigned int i = 0; i < listYear.size(); i++)
+        {
+            if(i+1 >= listYear.size())
+                break;
 
+            int older = compareYears(listYear[i], listYear[i+1]);
+            if(byOldest)
+            {
+                if(older == listYear[i+1])
+                {
+                    swapIntValues(listYear, i, i+1);
+                    swapCounter++;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                if(older != listYear[i+1])
+                {
+                    swapIntValues(listYear, i, i+1);
+                    swapCounter++;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+        if(origSwapCounter == swapCounter)
+            break;
+    }
+    normalizeList(cSciList, listYear);
 }
 
+
+void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
+{
+    for(unsigned int i = 0; i < listYear.size(); i++)
+    {
+        for(unsigned int j = 0; j < cSciList.size(); j++)
+        {
+            string strnum = cSciList[j].getDob();
+            int result = 0;
+            stringstream convert(strnum);
+            if ( !(convert >> result) )
+                result = 0;
+
+            if(listYear[i] == result)
+            {
+                if(cSciList[i].getDob() != cSciList[j].getDob())
+                {
+                    swapValues(cSciList, i, j);
+                }
+            }
+        }
+    }
+}
 
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
@@ -123,10 +187,28 @@ int Domain::compareString(string str1, string str2)
     return 0;
 }
 
+int Domain::compareYears(int year1, int year2)
+{
+     if(year1 < year2)
+        return year1;
+     if(year2 < year1)
+        return year2;
+
+     return 0;
+}
+
 void Domain::swapValues(vector<CScientist> &cSciList, int index1, int index2)
 {
     CScientist tmpVal1 = cSciList[index1];
     CScientist tmpVal2 = cSciList[index2];
+    cSciList[index1] = tmpVal2;
+    cSciList[index2] = tmpVal1;
+}
+
+void Domain::swapIntValues(vector<int> &cSciList, int index1, int index2)
+{
+    int tmpVal1 = cSciList[index1];
+    int tmpVal2 = cSciList[index2];
     cSciList[index1] = tmpVal2;
     cSciList[index2] = tmpVal1;
 }
@@ -136,6 +218,23 @@ int Domain::decimalValue(char chr)
     chr = tolower(chr);
     int decimal = chr - '0';
     return decimal;
+}
+
+vector<int> Domain::vecStrToInt(vector<CScientist> cSciList)
+{
+    vector<int> newVec;
+    newVec.reserve(cSciList.size());
+    for(unsigned int i = 0; i < cSciList.size(); i++)
+    {
+        string strnum = cSciList[i].getDob();
+        int result = 0;
+        stringstream convert(strnum);
+        if ( !(convert >> result) )
+            result = 0;
+
+        newVec.push_back(result);
+    }
+    return newVec;
 }
 
 
