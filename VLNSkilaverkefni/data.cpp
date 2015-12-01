@@ -1,43 +1,43 @@
-/*#include "data.h"
+#include "presentation.h"
 
- void Data::readFromFile(string docName, vector <CScientist>& scientists)
+Data::Data()
+{
+}
+
+void Data::readFromFile(string docName)
 {
     ifstream inStream;
-    CScientist temp;
+    vector <CScientist> scientists;
     inStream.open(docName.c_str());
+    string name, gender, dob,dod;
     while(!inStream.eof())
-
-
-
-{
-    inStream >> temp.getName();
-    inStream >> temp.getGender();
-    inStream >> temp.getDob();
-    inStream >> temp.getDod();
-
-    scientists.push_back(temp);
-}
-}
-
-void Data::writeToFile(string docName, vector <CScientist>& scientists)
-{
-    ofstream outStream;
-    outStream.open(docName.c_str(), ios::app);
-
-    for(unsigned int i = 0; i <scientists.size(); i++)
     {
-        outStream << scientists[i];
+        getline(inStream, name, '/');
+        getline(inStream, gender);
+        getline(inStream, dob);
+        getline(inStream, dod);
+        CScientist scientist(name, gender, dob, dod);
+        scientists.push_back(scientist);
+
     }
+    inStream.close();
 }
 
 ostream& operator <<(ostream& stream, const CScientist& scientist)
 {
-    stream << scientist.getName() << " ";
+    stream << scientist.getName() << "/";
     stream << scientist.getGender() << " ";
     stream << scientist.getDob() << " ";
     stream << scientist.getDod() << endl;
     return stream;
 }
 
-*/
-
+void Data::writeToFile(string docName, vector <CScientist>& scientists)
+{
+    ofstream outStream;
+    outStream.open(docName.c_str(), ios::app);
+    for(unsigned int i = 0; i < scientists.size(); i++)
+    {
+        outStream << scientists[i];
+    }
+}

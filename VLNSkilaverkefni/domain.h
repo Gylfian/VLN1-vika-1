@@ -1,8 +1,8 @@
 #ifndef DOMAIN_H
 #define DOMAIN_H
-#include "data.h"
 #include <algorithm>
 #include <sstream>
+#include "data.h"
 class Domain
 {
 public:

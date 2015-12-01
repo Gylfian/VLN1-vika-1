@@ -20,6 +20,7 @@ public:
     string dateDeath;
 
     CScientist();
+    CScientist(string cName, string cGender, string date1, string date2);
 private:
 
 };

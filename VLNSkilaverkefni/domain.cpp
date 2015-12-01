@@ -353,11 +353,10 @@ void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
 }
 
 
-/*
+
 void Domain::addToFile(vector<CScientist> &cSciList)
 {
     Data data;
     data.writeToFile("scientists.txt", cSciList);
-
 }
-*/
+

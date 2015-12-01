@@ -8,6 +8,15 @@ CScientist::CScientist()
     dateBorn = "";
     dateDeath = "";
 }
+
+CScientist::CScientist(string cName, string cGender, string date1, string date2)
+{
+    name = cName;
+    gender = cGender;
+    dateBorn = date1;
+    dateDeath = date2;
+}
+
 /*
  * Name: getName
  * Parameter/s: none

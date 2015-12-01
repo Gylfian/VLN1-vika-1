@@ -46,7 +46,7 @@ void Presentation::addScientist()
 
     }while(another());
     Domain dom1;
-    //dom1.addToFile(scientists);
+    dom1.addToFile(scientists);
     system("CLS");
     mainPage();
 }
@@ -227,26 +227,65 @@ void Presentation::printList(vector<CScientist> scientists)
         cout << "Year of death: " << scientists[i].getDod() << endl << endl;
     }
     cout << " ____________________________________________ " << endl;
-    cout << "|-Do you wish to [d]elete an entry?----------|" << endl;
+    cout << "|----------What do you want to do ?----------|" << endl;
+    cout << "|-1) Search the list for a specific entry----|" << endl;
+    cout << "|-2) delete an entry ?-----------------------|" << endl;
     cout << "|-Press any other key to go to the main menu-|" << endl;
     cout << "|____________________________________________|" << endl;
-    deleteOptions();
+    printListOptions();
 
 }
 
-void Presentation::deleteOptions()
+void Presentation::searchOptions()
+{
+    cout << " ______________________________________ " << endl;
+    cout << "|-How do you want to search the list ?-|" << endl;
+    cout << "|-1) By name---------------------------|" << endl;
+    cout << "|-2) By gender-------------------------|" << endl;
+    cout << "|-3) By birth year---------------------|" << endl;
+    cout << "|-4) By death year---------------------|" << endl;
+    cout << "|______________________________________|" << endl;
+
+    char ans = getch();
+    switch(ans)
+    {
+        case ('1'):
+        {
+
+        }break;
+        case ('2'):
+        {
+
+        }break;
+        case ('3'):
+        {
+
+        }break;
+        case ('4'):
+        {
+
+        }break;
+        default:
+            mainPage();
+
+    }
+}
+
+void Presentation::printListOptions()
 {
     char ans = getch();
     system("CLS");
 
     switch(ans)
     {
-        case ('d'):
-        case ('D'):
+        case ('1'):
+        {
+            searchOptions();
+        }break;
+        case ('2'):
         {
 
-        }
-        break;
+        }break;
         default:
             mainPage();
     }
