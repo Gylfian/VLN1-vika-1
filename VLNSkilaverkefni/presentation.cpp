@@ -198,22 +198,19 @@ void Presentation::whichOrder(char pChoice)
         default:
             listOptions();
     }
+
     Domain d1;
     vector<CScientist> scientists = d1.readFile();
-    printList(scientists);
-    char ans;
-    ans = getch();
-    system("CLS");
+    char ans = getch();
 
     switch (ans)
     {
         case ('1'):
-        {
-
-        }
         case ('2'):
         {
+            d1.sortBy(scientists, pChoice, ans);
             printList(scientists);
+
         }break;
         default:
             listOptions();
@@ -223,7 +220,7 @@ void Presentation::whichOrder(char pChoice)
 void Presentation::printList(vector<CScientist> scientists)
 {
     system("CLS");
-    for (size_t i = 0; i < scientists.size()- 1; i++)
+    for (size_t i = 0; i < scientists.size(); i++)
     {
         cout << "#" << i+1 << endl;
         cout << "Name: " << scientists[i].getName()  << endl;
