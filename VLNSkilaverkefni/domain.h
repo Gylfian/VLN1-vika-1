@@ -8,6 +8,10 @@ class Domain
 public:
     Domain();
     vector<CScientist> getScientistList();
+    vector<CScientist> searchByName(vector<CScientist> cSciList, string name);
+    vector<CScientist> searchByGender(vector<CScientist> cSciList, string gender);
+    vector<CScientist> searchByDateBorn(vector<CScientist> cSciList, string dateBorn);
+    vector<CScientist> searchByDateDeath(vector<CScientist> cSciList, string dateDeath);
     void sortByYear(vector<CScientist> &cSciList, bool byOldest);
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
