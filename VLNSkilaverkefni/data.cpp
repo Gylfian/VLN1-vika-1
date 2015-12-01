@@ -4,6 +4,7 @@ Data::Data()
 {
 }
 
+
 vector<CScientist> Data::readFromFile(string docName)
 {
     ifstream inStream;
@@ -13,6 +14,8 @@ vector<CScientist> Data::readFromFile(string docName)
     while(!inStream.eof())
     {
         getline(inStream, name, '/');
+        if(name == "")
+            break;
         getline(inStream, gender, '/');
         getline(inStream, dob, '/');
         getline(inStream, dod);
