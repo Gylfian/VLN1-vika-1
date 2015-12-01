@@ -153,14 +153,8 @@ void Presentation::listOptions()
 
     switch(ans)
     {
-        case('1'):
-        {
-            whichOrder(ans);
-        }break;
+        case ('1'):
         case ('2'):
-        {
-            whichOrder(ans);
-        }break;
         case ('3'):
         {
             whichOrder(ans);
@@ -173,6 +167,7 @@ void Presentation::listOptions()
 
 void Presentation::whichOrder(char pChoice)
 {
+
     switch (pChoice)
     {
         case ('1'):
@@ -194,6 +189,7 @@ void Presentation::whichOrder(char pChoice)
     Domain d1;
     vector<CScientist> scientists = d1.readFile();
     char ans = getch();
+    system("CLS");
 
     switch (ans)
     {
@@ -242,29 +238,34 @@ void Presentation::searchOptions()
 
     char ans = getch();
     Domain d1;
-    vector <CScientist> scientist;
+    vector <CScientist> searchValue, scientist = d1.readFile();
+    string search;
 
     switch(ans)
     {
         case ('1'):
         {
+            search = getNameSearch();
+            searchValue = d1.search(scientist,ans, search );
 
         }break;
         case ('2'):
         {
+            search = getGenderSearch();
+            searchValue = d1.search(scientist,ans, search );
 
         }break;
         case ('3'):
-        {
-
-        }break;
         case ('4'):
         {
+            search = getYearSearch();
+            searchValue = d1.search(scientist,ans, search );
 
         }break;
         default:
             mainPage();
     }
+    printList(searchValue);
 
 }
 
@@ -284,6 +285,7 @@ string Presentation::getGenderSearch()
     cout << "|__________________|" << endl;
 
     char ans = getch();
+    system("CLS");
 
     switch (ans)
     {
@@ -296,8 +298,17 @@ string Presentation::getGenderSearch()
             return "Female";
         }break;
         default:
-            searchOptions();
+            cout << "Please select a valid option!" << endl;
+            return getGenderSearch();
     }
+}
+
+string Presentation::getYearSearch()
+{
+    string search;
+    cout << "Enter the year you wish to find: ";
+    cin >> search;
+    return search;
 }
 
 void Presentation::printListOptions()

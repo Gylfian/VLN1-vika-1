@@ -26,7 +26,7 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
             }
             else
             {
-                sortByGender(cSciList, false, false);
+                sortByGender(cSciList, false, true);
             }
             break;
         case('3'):
@@ -206,11 +206,12 @@ vector<CScientist> Domain::searchByName(vector<CScientist> cSciList, string name
 {
     vector<CScientist> searchResults;
     for(unsigned int i = 0; i < cSciList.size(); i++)
-    {
+    {       
         if(cSciList[i].getName() == name)
         {
             searchResults.push_back(cSciList[i]);
         }
+
     }
     return searchResults;
 }

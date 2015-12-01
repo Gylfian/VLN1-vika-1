@@ -26,8 +26,7 @@ private:
     void searchOptions();
     string getNameSearch();
     string getGenderSearch();
-    string getDobSearch();
-    string getDodSearch();
+    string getYearSearch();
     void anotherText();
     void listOptionsText();
     void genderOrderText();
