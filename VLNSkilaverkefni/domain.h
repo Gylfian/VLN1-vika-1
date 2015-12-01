@@ -17,10 +17,10 @@ public:
     vector<CScientist> readFile();
     void deleteScientist(vector<CScientist> &cSciList, int index);
     bool normalizeName(string &name);
-private:
     void sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn);
     void sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending);
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
+private:
     vector<int> vecStrToInt(vector<CScientist> cSciList);
     int  decimalValue(char x);
     int  compareString(string str1, string str2);

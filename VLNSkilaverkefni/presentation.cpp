@@ -147,6 +147,7 @@ bool Presentation::another()
 void Presentation::listOptions()
 {
     listOptionsText();
+
     char ans = getch();
     system("CLS");
 
@@ -154,19 +155,19 @@ void Presentation::listOptions()
     {
         case('1'):
         {
-            alphaAscendingDecending();
+            whichOrder(ans);
         }break;
         case ('2'):
         {
-            genderOrder();
+            whichOrder(ans);
         }break;
         case ('3'):
         {
-
+            whichOrder(ans);
         }break;
         case ('4'):
         {
-
+            whichOrder(ans);
         }break;
         default:
             mainPage();
@@ -174,31 +175,34 @@ void Presentation::listOptions()
     }
 }
 
-void Presentation::alphaAscendingDecending()
+void Presentation::whichOrder(char pChoice)
 {
-    ascendingDecendingText();
-    char ans = getch();
-    system("CLS");
-
-    switch (ans)
+    switch (pChoice)
     {
         case ('1'):
         {
-
+            ascendingDecendingText();
         }break;
         case('2'):
         {
-
+            genderOrderText();
+        }break;
+        case('3'):
+        {
+            yearBornText();
+        }break;
+        case('4'):
+        {
+            yearDeathText();
         }break;
         default:
             listOptions();
     }
-}
-
-void Presentation::genderOrder()
-{
-    genderOrderText();
-    char ans = getch();
+    Domain d1;
+    vector<CScientist> scientists = d1.readFile();
+    printList(scientists);
+    char ans;
+    ans = getch();
     system("CLS");
 
     switch (ans)
@@ -206,10 +210,10 @@ void Presentation::genderOrder()
         case ('1'):
         {
 
-        }break;
+        }
         case ('2'):
         {
-
+            printList(scientists);
         }break;
         default:
             listOptions();
@@ -218,7 +222,8 @@ void Presentation::genderOrder()
 
 void Presentation::printList(vector<CScientist> scientists)
 {
-    for (size_t i = 0; i < scientists.size(); i++)
+    system("CLS");
+    for (size_t i = 0; i < scientists.size()- 1; i++)
     {
         cout << "#" << i+1 << endl;
         cout << "Name: " << scientists[i].getName()  << endl;
@@ -325,6 +330,26 @@ void Presentation::genderOrderText()
     cout << "|-In what order do you want the list?-|" << endl;
     cout << "|-1) Male first-----------------------|" << endl;
     cout << "|-2) Female first---------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}
+
+void Presentation::yearBornText()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Youngest first-------------------|" << endl;
+    cout << "|-2) Oldest first---------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}
+
+void Presentation::yearDeathText()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Most recent death----------------|" << endl;
+    cout << "|-2) The first to pass away-----------|" << endl;
     cout << "|-Press any other key to go back------|" << endl;
     cout << "|_____________________________________|" << endl;
 }

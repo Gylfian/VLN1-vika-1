@@ -13,8 +13,8 @@ vector<CScientist> Data::readFromFile(string docName)
     while(!inStream.eof())
     {
         getline(inStream, name, '/');
-        getline(inStream, gender);
-        getline(inStream, dob);
+        getline(inStream, gender, '/');
+        getline(inStream, dob, '/');
         getline(inStream, dod);
         CScientist scientist(name, gender, dob, dod);
         scientists.push_back(scientist);
@@ -27,8 +27,8 @@ vector<CScientist> Data::readFromFile(string docName)
 ostream& operator <<(ostream& stream, const CScientist& scientist)
 {
     stream << scientist.getName() << "/";
-    stream << scientist.getGender() << " ";
-    stream << scientist.getDob() << " ";
+    stream << scientist.getGender() << "/";
+    stream << scientist.getDob() << "/";
     stream << scientist.getDod() << endl;
     return stream;
 }

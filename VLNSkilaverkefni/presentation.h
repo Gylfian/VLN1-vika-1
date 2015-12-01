@@ -15,9 +15,7 @@ private:
     void options();
     bool another();
     void listOptions();
-    void alphaAscendingDecending();
-    void genderOrder();
-    void ascendingDecendingText();
+    void whichOrder(char pChoice);
     void scientistData(CScientist& cSci);
     string getInputGender();
     string getInputName();
@@ -29,6 +27,9 @@ private:
     void anotherText();
     void listOptionsText();
     void genderOrderText();
+    void yearDeathText();
+    void yearBornText();
+    void ascendingDecendingText();
 
 
 
