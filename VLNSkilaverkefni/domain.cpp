@@ -5,6 +5,13 @@ Domain::Domain()
 
 }
 
+/*
+ * Name: sortByYear
+ * Parameter/s: vector<CScientist> &cSciList, bool byOldest
+ * Description: Sortar listann cSciList eftir fæðingarári
+ * Usage: sortByYear(cSciList, true)
+ * (void)Output/Return: Listi rearranged, cSciList raðast eftir fæðingarári
+ */
 void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 {
     int origSwapCounter = 0, swapCounter = 0;
@@ -51,30 +58,13 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
     normalizeList(cSciList, listYear);
 }
 
-
-void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
-{
-    for(unsigned int i = 0; i < listYear.size(); i++)
-    {
-        for(unsigned int j = 0; j < cSciList.size(); j++)
-        {
-            string strnum = cSciList[j].getDob();
-            int result = 0;
-            stringstream convert(strnum);
-            if ( !(convert >> result) )
-                result = 0;
-
-            if(listYear[i] == result)
-            {
-                if(cSciList[i].getDob() != cSciList[j].getDob())
-                {
-                    swapValues(cSciList, i, j);
-                }
-            }
-        }
-    }
-}
-
+/*
+ * Name: sortByAlphabet
+ * Parameter/s: vector<CScientist> &cSciList, bool byAscending
+ * Description: Sortar listann cSciList í stafrófsröð eða öfugri stafrófsröð
+ * Usage: sortByAlphabet(cSciList, true)
+ * (void)Output/Return: Listi rearranged, cSciList kemur í réttri stafrófsröð
+ */
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
     int origSwapCounter = 0, swapCounter = 0, strVal = 0, searchValue = 2;
@@ -103,6 +93,13 @@ void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
     }
 }
 
+/*
+ * Name: sortByGender
+ * Parameter/s: vector<CScientist> &cSciList, bool byMale, bool byAscending
+ * Description: Sortar listann cSciList eftir kyni, með stafrófsröð eða öfugri stafrófsröð.
+ * Usage: sortByGender(cSciList, true, false)
+ * (void)Output/Return: Listi rearranged, male koma first en í öfugri stafrófsröð
+ */
 void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAscending)
 {
     vector<CScientist> tmp, tmp2;
@@ -141,11 +138,55 @@ void Domain::sortByGender(vector<CScientist> &cSciList, bool byMale, bool byAsce
    mergeList(cSciList, tmp, tmp2);
 }
 
+/*
+ * Name: normalizeList
+ * Parameter/s: vector<CScientist> &cSciList, bool byMale, bool byAscending
+ * Description: Sortar listann cSciList eftir kyni, með stafrófsröð eða öfugri stafrófsröð.
+ * Usage: sortByGender(cSciList, true, false)
+ * (void)Output/Return: Listi rearranged, male koma first en í öfugri stafrófsröð
+ */
+void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
+{
+    for(unsigned int i = 0; i < listYear.size(); i++)
+    {
+        for(unsigned int j = 0; j < cSciList.size(); j++)
+        {
+            string strnum = cSciList[j].getDob();
+            int result = 0;
+            stringstream convert(strnum);
+            if ( !(convert >> result) )
+                result = 0;
+
+            if(listYear[i] == result)
+            {
+                if(cSciList[i].getDob() != cSciList[j].getDob())
+                {
+                    swapValues(cSciList, i, j);
+                }
+            }
+        }
+    }
+}
+
+/*
+ * Name: deleteScientist
+ * Parameter/s: vector<CScientist> &cSciList, int index
+ * Description: Eyðir út ákveðnum aðila sem er stjórnað af indexi.
+ * Usage: deleteScientist(cSciList, 5);
+ * (vector<CScientist>)Output/Return: 5th element eytt út.
+ */
 void Domain::deleteScientist(vector<CScientist> &cSciList, int index)
 {
     cSciList.erase(cSciList.begin()+index);
 }
 
+/*
+ * Name: mergeList
+ * Parameter/s: none
+ * Description: Skilar lista af öllum scientists inn í skrá.
+ * Usage: vector<CScientist> list = getScientistList()
+ * (vector<CScientist>)Output/Return: list = allScientists
+ */
 vector<CScientist> Domain::getScientistList()
 {
     vector<CScientist> cSciList;
@@ -153,6 +194,13 @@ vector<CScientist> Domain::getScientistList()
     return cSciList;
 }
 
+/*
+ * Name: mergeList
+ * Parameter/s: vector<CScientist> &cSciList, vector<CScientist> vec1, vector<CScientist> vec2
+ * Description: Tekur 3 lista. Fyrsti (pass by reference) er aðal vectorinn og hinir 2 eru settir inn í hann.
+ * Usage: compareString(mainList, templist, templist2)
+ * (void)Output/Return: mainList = templist + templist2 || temp2list + templist
+ */
 void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, vector<CScientist> vec2)
 {
     cSciList.clear();
@@ -166,6 +214,13 @@ void Domain::mergeList(vector<CScientist> &cSciList, vector<CScientist> vec1, ve
     }
 }
 
+/*
+ * Name: compareString
+ * Parameter/s: string str1, string str2
+ * Description: Ber saman 2 strengi. Skilar 1 ef str1 er fyrr í stafróinu, skilar 2 ef str2 er fyrr í strafróinu. Skilar 0 ef það er jafnt.
+ * Usage: compareString("Karl", "Andri")
+ * (int)Output/Return: 2
+ */
 int Domain::compareString(string str1, string str2)
 {
     int strVal1 = 0, strVal2 = 0;
@@ -187,6 +242,13 @@ int Domain::compareString(string str1, string str2)
     return 0;
 }
 
+/*
+ * Name: compareYears
+ * Parameter/s: int year1, int year2
+ * Description: Ber saman 2 integera og skilar þeim minni
+ * Usage: compareYears(2000, 1000)
+ * (int)Output/Return: 1000
+ */
 int Domain::compareYears(int year1, int year2)
 {
      if(year1 < year2)
@@ -197,6 +259,13 @@ int Domain::compareYears(int year1, int year2)
      return 0;
 }
 
+/*
+ * Name: swapValues
+ * Parameter/s: vector<CScientist> &cSciList, int index1, int index2
+ * Description: Skiptir á values inn í CScientist vector. Hverju er skipt er stjórnað af 2 index breytum.
+ * Usage: swapValues(vector, 0, 1)
+ * (void)Output/Return: vector[(old)0] -> vector[1] && vector[(old)1] -> vector[0]
+ */
 void Domain::swapValues(vector<CScientist> &cSciList, int index1, int index2)
 {
     CScientist tmpVal1 = cSciList[index1];
@@ -205,6 +274,13 @@ void Domain::swapValues(vector<CScientist> &cSciList, int index1, int index2)
     cSciList[index2] = tmpVal1;
 }
 
+/*
+ * Name: swapIntValues
+ * Parameter/s: vector<int> &cSciList, int index1, int index2
+ * Description: Skiptir á values inn í integer vector. Hverju er skipt er stjórnað af 2 index breytum.
+ * Usage: swapIntValues(vector, 0, 1)
+ * (void)Output/Return: vector[(old)0] -> vector[1] && vector[(old)1] -> vector[0]
+ */
 void Domain::swapIntValues(vector<int> &cSciList, int index1, int index2)
 {
     int tmpVal1 = cSciList[index1];
@@ -213,6 +289,13 @@ void Domain::swapIntValues(vector<int> &cSciList, int index1, int index2)
     cSciList[index2] = tmpVal1;
 }
 
+/*
+ * Name: decimalValue
+ * Parameter/s: char chr
+ * Description: Convertar char yfir í decimal ASCII gildi
+ * Usage: decimalValue(a)
+ * (int)Output/Return: 49
+ */
 int Domain::decimalValue(char chr)
 {
     chr = tolower(chr);
@@ -237,7 +320,12 @@ vector<int> Domain::vecStrToInt(vector<CScientist> cSciList)
     return newVec;
 }
 
-
+/*
+ * Name: normalizeName
+ * Description: Notað til þess að laga nöfn sem eru illa eða rangt sett upp.
+ * Usage: normalizeName("jÓn bAlduRSsOn")
+ * (str)Output/Return: Jón Baldursson
+ */
 bool Domain::normalizeName(string &name)
 {
     if(name.length() <= 0)
