@@ -1,5 +1,5 @@
-#include "data.h"
-/*
+/*#include "data.h"
+
  void Data::readFromFile(string docName, vector <CScientist>& scientists)
 {
     ifstream inStream;
@@ -38,4 +38,5 @@ ostream& operator <<(ostream& stream, const CScientist& scientist)
     stream << scientist.getDod() << endl;
     return stream;
 }
+
 */
