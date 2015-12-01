@@ -17,6 +17,8 @@ public:
      */
     vector<CScientist> getScientistList();
 
+    vector<CScientist> search(vector<CScientist> cSciList, char searchVal, string searchString);
+
     /*
      * Name: searchByName
      * Parameter/s: vector<CScientist> cSciList, string name
@@ -73,6 +75,8 @@ public:
      */
     bool normalizeName(string &name);
 
+private:
+
     /*
      * Name: sortByYear
      * Parameter/s: vector<CScientist> &cSciList, bool byOldest
@@ -101,7 +105,6 @@ public:
      */
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
 
-private:
     vector<int> vecStrToInt(vector<CScientist> cSciList);
 
     /*
