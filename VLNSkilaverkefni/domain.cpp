@@ -5,6 +5,54 @@ Domain::Domain()
 
 }
 
+void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
+{
+    switch(pChoice)
+    {
+        case('1'):
+            if(cChoice == '1')
+            {
+                sortByAlphabet(cSciList, true);
+            }
+            else
+            {
+                sortByAlphabet(cSciList, false);
+            }
+            break;
+        case('2'):
+            if(cChoice == '2')
+            {
+                sortByGender(cSciList, true, true);
+            }
+            else
+            {
+                sortByGender(cSciList, false, true);
+            }
+            break;
+        case('3'):
+            if(cChoice == '3')
+            {
+                sortByYear(cSciList, true, true);
+            }
+            else
+            {
+                sortByYear(cSciList, false, true);
+            }
+            break;
+        case('4'):
+            if(cChoice == '4')
+            {
+                sortByYear(cSciList, true, false);
+            }
+            else
+            {
+                sortByYear(cSciList, false, false);
+            }
+            break;
+
+    }
+}
+
 /*
  * Name: sortByYear
  * Parameter/s: vector<CScientist> &cSciList, bool byOldest
@@ -12,7 +60,7 @@ Domain::Domain()
  * Usage: sortByYear(cSciList, true)
  * (void)Output/Return: Listi rearranged, cSciList raðast eftir fæðingarári
  */
-void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
+void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn)
 {
     int origSwapCounter = 0, swapCounter = 0;
     vector<int> listYear;
@@ -55,7 +103,7 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
         if(origSwapCounter == swapCounter)
             break;
     }
-    normalizeList(cSciList, listYear);
+    normalizeList(cSciList, listYear, byBorn);
 }
 
 /*
@@ -409,13 +457,21 @@ bool Domain::normalizeName(string &name)
  * Usage: normalizeList(cSciList, listYear)
  * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
  */
-void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
+void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, bool byBorn)
 {
     for(unsigned int i = 0; i < listYear.size(); i++)
     {
         for(unsigned int j = 0; j < cSciList.size(); j++)
         {
-            string strnum = cSciList[j].getDob();
+            string strnum;
+            if(byBorn)
+            {
+                cSciList[j].getDob();
+            }
+            else
+            {
+                cSciList[j].getDod();
+            }
             int result = 0;
             stringstream convert(strnum);
             if ( !(convert >> result) )
@@ -423,9 +479,19 @@ void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
 
             if(listYear[i] == result)
             {
-                if(cSciList[i].getDob() != cSciList[j].getDob())
+                if(byBorn)
                 {
-                    swapValues(cSciList, i, j);
+                    if(cSciList[i].getDob() != cSciList[j].getDob())
+                    {
+                        swapValues(cSciList, i, j);
+                    }
+                }
+                else
+                {
+                    if(cSciList[i].getDod() != cSciList[j].getDod())
+                    {
+                        swapValues(cSciList, i, j);
+                    }
                 }
             }
         }
