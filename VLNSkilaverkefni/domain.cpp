@@ -53,6 +53,31 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
     }
 }
 
+vector<CScientist> Domain::search(vector<CScientist> cSciList, char searchVal, string searchString)
+{
+    vector<CScientist> searchResult;
+
+    switch(searchVal)
+    {
+        case('1'):
+            searchResult = searchByName(cSciList, searchString);
+        break;
+
+        case('2'):
+            searchResult = searchByGender(cSciList, searchString);
+        break;
+
+        case('3'):
+            searchResult = searchByDateBorn(cSciList, searchString);
+        break;
+
+        case('4'):
+            searchResult = searchByDateDeath(cSciList, searchString);
+        break;
+    }
+
+    return searchResult;
+}
 
 void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 {
