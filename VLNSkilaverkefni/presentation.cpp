@@ -1,6 +1,5 @@
 #include "presentation.h"
 
-
 Presentation::Presentation() {}
 
 void Presentation::mainPage()
@@ -27,7 +26,7 @@ void Presentation::options()
         }break;
         case ('2'):
         {
-            displayListOptions();
+            listOptions();
         }break;
         default:
             exit (1);
@@ -52,7 +51,7 @@ void Presentation::addScientist()
     mainPage();
 }
 
-void Presentation::scientistData(CScientist &cSci)
+void Presentation::scientistData(CScientist& cSci)
 {
     string name, gender, Dob, Dod;
     name = getInputName();
@@ -109,7 +108,6 @@ string Presentation::getInputName()
     return name;
 }
 
-
 string Presentation::getInputDob()
 {
     string Dob;
@@ -128,9 +126,7 @@ string Presentation::getInputDod()
 
 bool Presentation::another()
 {
-    cout << "-------------Person added--------------" << endl;
-    cout << "Do you wish to add another person (y/n)" << endl;
-
+    anotherText();
     char ans = getch();
 
     switch (ans)
@@ -148,22 +144,9 @@ bool Presentation::another()
     }
 }
 
-void Presentation::displayListOptions()
-{
-    cout << " _____________________________________" << endl;
-    cout << "|-How do you want the list displayed?-|" << endl;
-    cout << "|-1) Alphabetically-------------------|" << endl;
-    cout << "|-2) By gender------------------------|" << endl;
-    cout << "|-3) By year of birth-----------------|" << endl;
-    cout << "|-4) By year of death-----------------|" << endl;
-    cout << "|-Press any other key to go back------|" << endl;
-    cout << "|_____________________________________|" << endl;
-    listOptions();
-
-}
-
 void Presentation::listOptions()
 {
+    listOptionsText();
     char ans = getch();
     system("CLS");
 
@@ -191,16 +174,6 @@ void Presentation::listOptions()
     }
 }
 
-void Presentation::ascendingDecendingText()
-{
-    cout << " _____________________________________" << endl;
-    cout << "|-In what order do you want the list?-|" << endl;
-    cout << "|-1) Ascending order------------------|" << endl;
-    cout << "|-2) Decending order------------------|" << endl;
-    cout << "|-Press any other key to go back------|" << endl;
-    cout << "|_____________________________________|" << endl;
-}
-
 void Presentation::alphaAscendingDecending()
 {
     ascendingDecendingText();
@@ -218,19 +191,13 @@ void Presentation::alphaAscendingDecending()
 
         }break;
         default:
-            displayListOptions();
+            listOptions();
     }
 }
 
 void Presentation::genderOrder()
 {
-    cout << " _____________________________________" << endl;
-    cout << "|-In what order do you want the list?-|" << endl;
-    cout << "|-1) Male first-----------------------|" << endl;
-    cout << "|-2) Female first---------------------|" << endl;
-    cout << "|-Press any other key to go back------|" << endl;
-    cout << "|_____________________________________|" << endl;
-
+    genderOrderText();
     char ans = getch();
     system("CLS");
 
@@ -245,7 +212,7 @@ void Presentation::genderOrder()
 
         }break;
         default:
-            displayListOptions();
+            listOptions();
     }
 }
 
@@ -262,3 +229,40 @@ void Presentation::printList(vector<CScientist> scientists)
 
 }
 
+void Presentation::anotherText()
+{
+    cout << "-------------Person added--------------" << endl;
+    cout << "Do you wish to add another person (y/n)" << endl;
+}
+
+void Presentation::listOptionsText()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-How do you want the list displayed?-|" << endl;
+    cout << "|-1) Alphabetically-------------------|" << endl;
+    cout << "|-2) By gender------------------------|" << endl;
+    cout << "|-3) By year of birth-----------------|" << endl;
+    cout << "|-4) By year of death-----------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}
+
+void Presentation::ascendingDecendingText()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Ascending order------------------|" << endl;
+    cout << "|-2) Decending order------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}
+
+void Presentation::genderOrderText()
+{
+    cout << " _____________________________________" << endl;
+    cout << "|-In what order do you want the list?-|" << endl;
+    cout << "|-1) Male first-----------------------|" << endl;
+    cout << "|-2) Female first---------------------|" << endl;
+    cout << "|-Press any other key to go back------|" << endl;
+    cout << "|_____________________________________|" << endl;
+}

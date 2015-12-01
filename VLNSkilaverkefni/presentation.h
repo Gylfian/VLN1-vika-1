@@ -10,21 +10,23 @@ class Presentation
 public:
     Presentation();
     void mainPage();
-    void getAns();
+private:
     void addScientist();
     void options();
     bool another();
     void listOptions();
-    void displayListOptions();
     void alphaAscendingDecending();
     void genderOrder();
     void ascendingDecendingText();
-    void scientistData(CScientist &cSci);
+    void scientistData(CScientist& cSci);
     string getInputGender();
     string getInputName();
     string getInputDob();
     string getInputDod();
     void printList(vector <CScientist> scientists);
+    void anotherText();
+    void listOptionsText();
+    void genderOrderText();
 
 
 };
