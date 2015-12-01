@@ -20,33 +20,33 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
             }
             break;
         case('2'):
-            if(cChoice == '2')
+            if(cChoice == '1')
             {
                 sortByGender(cSciList, true, true);
             }
             else
             {
-                sortByGender(cSciList, false, true);
+                sortByGender(cSciList, false, false);
             }
             break;
         case('3'):
-            if(cChoice == '3')
+            if(cChoice == '1')
             {
-                sortByYear(cSciList, true, true);
+                sortByYear(cSciList, true);
             }
             else
             {
-                sortByYear(cSciList, false, true);
+                sortByYear(cSciList, false);
             }
             break;
         case('4'):
-            if(cChoice == '4')
+            if(cChoice == '1')
             {
-                sortByYear(cSciList, true, false);
+                sortByYear(cSciList, true);
             }
             else
             {
-                sortByYear(cSciList, false, false);
+                sortByYear(cSciList, false);
             }
             break;
 
@@ -54,7 +54,7 @@ void Domain::sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice)
 }
 
 
-void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn)
+void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
 {
     int origSwapCounter = 0, swapCounter = 0;
     vector<int> listYear;
@@ -97,7 +97,7 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest, bool byBorn
         if(origSwapCounter == swapCounter)
             break;
     }
-    normalizeList(cSciList, listYear, byBorn);
+    normalizeList(cSciList, listYear);
 }
 
 /*
@@ -451,21 +451,13 @@ bool Domain::normalizeName(string &name)
  * Usage: normalizeList(cSciList, listYear)
  * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
  */
-void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, bool byBorn)
+void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
 {
     for(unsigned int i = 0; i < listYear.size(); i++)
     {
         for(unsigned int j = 0; j < cSciList.size(); j++)
         {
-            string strnum;
-            if(byBorn)
-            {
-                cSciList[j].getDob();
-            }
-            else
-            {
-                cSciList[j].getDod();
-            }
+            string strnum = cSciList[j].getDob();
             int result = 0;
             stringstream convert(strnum);
             if ( !(convert >> result) )
@@ -473,19 +465,9 @@ void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear, 
 
             if(listYear[i] == result)
             {
-                if(byBorn)
+                if(cSciList[i].getDob() != cSciList[j].getDob())
                 {
-                    if(cSciList[i].getDob() != cSciList[j].getDob())
-                    {
-                        swapValues(cSciList, i, j);
-                    }
-                }
-                else
-                {
-                    if(cSciList[i].getDod() != cSciList[j].getDod())
-                    {
-                        swapValues(cSciList, i, j);
-                    }
+                    swapValues(cSciList, i, j);
                 }
             }
         }
