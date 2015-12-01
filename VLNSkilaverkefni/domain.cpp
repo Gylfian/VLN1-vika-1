@@ -189,11 +189,11 @@ vector<CScientist> Domain::searchByName(vector<CScientist> cSciList, string name
     vector<CScientist> searchResults;
     for(unsigned int i = 0; i < cSciList.size(); i++)
     {       
-        if(cSciList[i].getName() == name)
+        normalizeName(name);
+        if (cSciList[i].getName().find(name) != std::string::npos)
         {
             searchResults.push_back(cSciList[i]);
         }
-
     }
     return searchResults;
 }
