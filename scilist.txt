@@ -1,30 +1,30 @@
-charles baggage - 1791-1871 male
-Barbara Liskov -  1939-x  female
-Ada Lovelave -1815-1852 female
-Sergey Brin - 1973 - x male
-Larry Page - 1973 - x male
-Linus Torvalds 1969 - x male
-George Boole 1815 - 1864 male
-Philip Don Estridge 1937 - 1985 male
-Bill Gates 1955 - x male
-Tim Berners-Lee 1955 - x male
-Alan Turing 1912-1954 male
-Wesley Allison Clark 1927 - x male
-John Presper Eckert 1919-1995  male
-Douglas Engelbart 1925-2013 male
-Margaret Hamilton 1936 - x female
-Herbert Alexander Simon 1916 - x male
-John Carmack   1970 - x male
-David Axmark 1962 - x male
-James Gosling 1955 - x male
-Ken Thompson 1943 - x male
-Brian Kernighan 1942 - x male
-Donald Knuth 1938 - x male
-Brendan Eich 1961 - x male
-Bram Cohen 1975 - x male
-Guido van Rossum 1956 - x male
-Bjarne Stroustrup 1950 - x male
-Sophie Wilson 1957 - x female
-Mark Zuckerberg 1984 - x male
-Radia Perlman 1951 - x female
-Grace Hopper 1906 - 1992 female
+Linus Torvalds/Male/1969/none
+Ada Lovelace/Female/1815/1852
+Charles Baggage/Male/1791/1871
+Barbara Liskov/Female/1939/none
+Sergey Brin/Male/1973/none
+Larry Page/Male/1973/none
+George Boole/Male/1815/1864
+Philip Don Estridge/Male/1937/1985
+Bill Gates/Male/1955/none
+Tim Berners Lee/Male/1955/none
+Alan Turing/Male/1912/1954
+Wesley Allison Clark/Male/1927/none
+John Presper Eckert/Male/1919/1995
+Douglas Engelbart/Male/1925/2013
+Margaret Hamilton/Female/1936/none
+Herbert Alexander Simon/Male/1916/none
+John Carmack/Male/1970/none
+David Axmark/Male/1962/none
+James Gosling/Male/1955/none
+Ken Thompson/Male/1943/none
+Brian Kernighan/Male/1942/none
+Donald Knuth/Male/1938/none
+Brendan Eich/Male/1961/none
+Bram Cohen/Male/1975/none
+Guido Van Rossum/Male/1956/none
+Bjarne Stroustrup/Male/1950/none
+Sophie Wilson/Female/1957/none
+Mark Zuckerberg/Male/1984/none
+Radia Perlman/Female/1951/none
+Grace Hopper/Female/1906/1992
