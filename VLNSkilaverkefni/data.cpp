@@ -1,9 +1,5 @@
 #include "presentation.h"
 
-Data::Data()
-{
-}
-
 
 vector<CScientist> Data::readFromFile(string docName)
 {

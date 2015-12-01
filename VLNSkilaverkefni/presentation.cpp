@@ -1,7 +1,5 @@
 #include "presentation.h"
 
-Presentation::Presentation(){}
-
 void Presentation::mainPage()
 {
     cout << " ________________MAIN_MENU_______________" << endl;
@@ -377,4 +375,3 @@ void Presentation::yearBornText()
     cout << "|-Press any other key to go back------|" << endl;
     cout << "|_____________________________________|" << endl;
 }
-
