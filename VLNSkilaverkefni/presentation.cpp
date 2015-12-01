@@ -48,7 +48,7 @@ void Presentation::addScientist()
     Domain dom1;
     //dom1.addToFile(scientists);
     system("CLS");
-    printList(scientists);
+    mainPage();
 }
 
 void Presentation::scientistData(CScientist& cSci)
