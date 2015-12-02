@@ -259,12 +259,27 @@ void Presentation::searchOptions()
             search = getYearSearch();
             searchValue = d1.search(scientist,ans, search );
 
+
         }break;
         default:
             mainPage();
     }
     printList(searchValue);
 
+}
+
+
+void Presentation::deleteFromList()
+{
+    string name;
+    Domain d1;
+    vector <CScientist> searchValue, scientist = d1.readFile();
+    cout << "Enter the name of the scientist you wish to delete: ";
+    getline(cin, name);
+    name = getNameSearch();
+    char ans = '1';
+    searchValue = d1.search(scientist, ans, name);
+    d1.deleteScientist(searchValue, scientist);
 }
 
 string Presentation::getNameSearch()

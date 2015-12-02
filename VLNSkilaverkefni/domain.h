@@ -81,7 +81,8 @@ public:
      * Usage: deleteScientist(cSciList, 5);
      * (vector<CScientist>)Output/Return: 5th element deleted.
      */
-    void deleteScientist(vector<CScientist> &cSciList, int index);
+    void deleteScientist(vector<CScientist> &cSearchList, vector<CScientist> &cSciList);
+
 
     /*
      * Name: normalizeName
@@ -174,6 +175,7 @@ private:
      * Usage: swapValues(vector, 0, 1)
      * (void)Output/Return: vector[(old)0] -> vector[1] && vector[(old)1] -> vector[0]
      */
+
     void swapValues(vector<CScientist> &cSciList, int index1, int index2);
     /*
      * Name: swapIntValues

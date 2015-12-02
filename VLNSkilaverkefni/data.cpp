@@ -32,10 +32,13 @@ ostream& operator <<(ostream& stream, const CScientist& scientist)
     return stream;
 }
 
-void Data::writeToFile(string docName, vector <CScientist>& scientists)
+void Data::writeToFile(string docName, vector <CScientist>& scientists, bool overwrite)
 {
     ofstream outStream;
-    outStream.open(docName.c_str(), ios::app);
+    if(overwrite)
+        outStream.open(docName.c_str());
+    else
+        outStream.open(docName.c_str(), ios::app);
     for(unsigned int i = 0; i < scientists.size(); i++)
     {
         outStream << scientists[i];

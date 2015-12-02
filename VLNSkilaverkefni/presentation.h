@@ -55,6 +55,7 @@ private:
      * (int)Output/Return: The function calls a function the adds scientists to the list
      */
     void listOptions();
+    void deleteFromList();
     void whichOrder(char pChoice);
     void scientistData(CScientist& cSci);
     string getInputGender();

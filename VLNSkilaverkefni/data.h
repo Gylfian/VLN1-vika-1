@@ -33,7 +33,7 @@ public:
      * Usage: data.writeToFile("scientists.txt", cSciList);
      * (void)Output/Return: The text file scientists.txt is filled with data from the vector cSciList
      */
-    void writeToFile(string docName, vector <CScientist>& scientists);
+    void writeToFile(string docName, vector <CScientist>& scientists, bool overwrite);
 
 
 };

@@ -241,9 +241,20 @@ vector<CScientist> Domain::searchByDateDeath(vector<CScientist> cSciList, string
 }
 
 
-void Domain::deleteScientist(vector<CScientist> &cSciList, int index)
+void Domain::deleteScientist(vector<CScientist> &cSearchList, vector<CScientist> &cSciList)
 {
-    cSciList.erase(cSciList.begin()+index); //.begin == index[0]
+    for(unsigned int i = 0; i < cSearchList.size(); i++)
+    {
+        for(unsigned int j = 0; j < cSciList.size(); j++)
+        {
+            if(cSciList[j].getName() == cSearchList[i].getName())
+            {
+                cSciList.erase(cSciList.begin()+j);
+                j--;
+            }
+
+        }
+    }
 }
 
 
@@ -406,7 +417,7 @@ void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
 void Domain::addToFile(vector<CScientist> &cSciList)
 {
     Data data;
-    data.writeToFile("scientists.txt", cSciList);
+    data.writeToFile("scientists.txt", cSciList, false);
 }
 
 vector<CScientist> Domain::readFile()
