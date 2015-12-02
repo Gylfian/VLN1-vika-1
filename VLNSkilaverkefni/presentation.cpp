@@ -157,6 +157,12 @@ void Presentation::listOptions()
         {
             whichOrder(ans);
         }break;
+        case ('4'):
+        {
+            Domain d1;
+            vector<CScientist> scientists = d1.readFile();
+            printList(scientists);
+        }break;
         default:
             mainPage();
 
@@ -263,6 +269,7 @@ void Presentation::searchOptions()
         default:
             mainPage();
     }
+    d1.sortBy(searchValue,'1','1');
     printList(searchValue);
 
 }
@@ -342,6 +349,7 @@ void Presentation::listOptionsText()
     cout << "|-1) Alphabetically-------------------|" << endl;
     cout << "|-2) By gender------------------------|" << endl;
     cout << "|-3) By year of birth-----------------|" << endl;
+    cout << "|-4) Unchanged------------------------|" << endl;
     cout << "|-Press any other key to go back------|" << endl;
     cout << "|_____________________________________|" << endl;
 }
