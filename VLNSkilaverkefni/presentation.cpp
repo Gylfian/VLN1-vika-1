@@ -283,6 +283,13 @@ void Presentation::deleteFromList()
     searchValue = d1.search(scientist, '1', name);
     printList(searchValue);
     char number = 49;
+    if(searchValue.empty())
+    {
+        system("CLS");
+        cout << "That entry does not exist!" << endl;
+        printListText();
+        printListOptions();
+    }
     if(searchValue.size() > 1)
     {
         cout << "Insert the number of the person you wish to delete:" << endl;
