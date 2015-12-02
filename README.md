@@ -1,45 +1,40 @@
-Computerscientist 
-	CScientist - Sjálfgefinn smiður fyrir klasann,býr til tilvik af klasanum og setur
-	tómastrenginn í allar breytur.
-	getName - Skilar nafni tölvunarfræðings
-	getGender - Skilar kyni tölvunarfræðings
-	getDob - Skilar fæðingarári tölvunarfræðings
-	getDod - skilar dánarári tölvunarfræðings
-	setName - Notað til að breyta nafni tölvunarfræðings
-	setGender - Notað til að breyta kyni tölvunarfræðings
-	setDob - Notað til að breyta fæðingardagsetningu tölvunnarfræðings
-	setDod - Notað til að breyta dánardagsetningu tölvunarfræðings
-	
-Domain
-	Domain - Sjálfgefinn smiður fyrir klasann
-	sortByAlphabet - Raðar tölvunarfræðingum í vektor í stafrófsröð eða öfuga stafrófsröð eftir
-	því hvaða bool gildi er sett inn í fallið
-	sortByGender - Raðar  tölvunarfræðingum í vektor eftir kyni og síðan í stafrófsröð eða 
-	öfuga stafrófsröð
-	mergeList - Sameinar tvo vektora
-	reverseList - Snýr vektor við þannig að aftasta stakið verður fremst og öfugt
-	compareString - Ber saman tvo strengi, skilar tölugildi fyrir streng sem er ofar í stafrófi
-	swapValues - Víxlar tveimur gildum í vektor
-	decimalValue - Breytir char í ASCII gildi
-	normalizeName- Setur nafn á staðlað form (stórir stafir fremst í hverju orði , annað lágstafir)
-	skilar því hvort að strengur sé tómur eða ekki
-	
-Presentation
-	mainPage - Birtir aðalvalmynd
-	options - Tekur við valmöguleika notenda á aðalvalmynd
-	addScientist - Keyrir fallið sem les inn tölvunarfræðinga og leyfir notenda að stimpla inn fleiri
-	scientistData - Keyrir meðlimaföllin sem að eru nauðsynleg til að lesa inn tölvunarfræðinginn
-	getInputName - Spyr notenda um og les inn nafn tölvunarfræðings
-	getInputGender - Spyr notenda um kyn tölvunarfræðings
-	getInputDob - Spyr notenda um og les inn fæðingarár tölvunarfræðings
-	detInputDod - Spyr notenda um og les inn dánarár tölvunarfræðings
-	anotherText - Spyr notenda hvort hann vilji birta annan tölvunarfræðing
-	listOptionsText - Spyr notenda í hvaða röð hann vilji birta lista af tölvunarfræðingum
-	listOptions - Tekur við vali frá notenda um í hvaða röð eigi að byggja listann.
-	ascendingDecendingText - Birtir notenda valmynd sem býður upp á að birta lista í hækkandi eða 
-	lækkandi röð
-	alphaAscendingDecending - Tekur við vali um hvort stafrófsraðaður listi eigi
-	að vera birtur í hækkandi eða lækkandi röð.
-	genderOrderText - Spyr notenda hvort birta eigi kynraðaðan lista með körlum eða konum fyrst
+Dear user
+Descriptions on how to use the program are listed here below.
+Please  note that this program only works on windows based operating systems.
 
-	
+How to enter scientists ?
+- From the main menu press 1 and then proceed to
+- Enter the persons first name, last name and middle name (if available) seperated by spaces,
+  when finished entering info press return
+- Press m on your keyboard if the person is a male , or f if the person is a female
+- Enter the persons year of birth in digits and then press return
+- Enter the persons year of death in digits and then press return , if the person is still alive
+  enter "none" and then press return
+- The console will now prompt you if you want to add another scientist , press y to add another one
+  or press n to return to the main menu
+How do I display the list of the scientist ?
+- From the main menu press 2 
+- The system will now prompt you and ask you how you want the list displayed
+- Press 1 to display it alphabeticly and then 1 to display it in ascending order and 2 to display 
+  it in descending order.
+- Press 2 to display it sorted by gender and then 1 to display males first and 2 to display females
+  first. 
+- Press 3 to display it by year of birth and then 1 to display the youngest first and 2 to
+  display the oldest first. 
+- Press 4 to display the list unchanged as it appears in the file
+How do I search the list ?
+- First display the list using any of the methods listed above, then press 1. The system will now  
+  Prompt you and ask you what parameter you want to search by.
+- Press 1 to search the list by name
+- Press 2 to search the list by gender
+- Press 3 to search the list by birth year
+- Press 4 to search the list by death year
+- After selecting an option write in the name/gender/year you want to search by and press return
+Oh my god i made an error, how do I delete persons from the list ?
+- First display the list using any of the methods listed above, then press 2.
+- Now enter the name of the scientist you wish to delete and press return
+- The system will prompt you and ask if you are sure , press y to delete and n to cancel
+
+
+  
+
