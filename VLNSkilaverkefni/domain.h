@@ -104,7 +104,7 @@ public:
      * Usage: deleteScientist(cSciList, 5);
      * (vector<CScientist>)Output/Return: 5th element deleted.
      */
-    void Domain::deleteScientist(CScientist indexToDelete, vector<CScientist> &cSciList);
+    void deleteScientist(CScientist indexToDelete, vector<CScientist> &cSciList);
 
 
     /*

@@ -1,0 +1,27 @@
+Linus Torvalds/Male/1969/none
+Ada Lovelace/Female/1815/1852
+Charles Baggage/Male/1791/1871
+Barbara Liskov/Female/1939/none
+Sergey Brin/Male/1973/none
+Philip Don Estridge/Male/1937/1985
+Tim Berners Lee/Male/1955/none
+Alan Turing/Male/1912/1954
+Wesley Allison Clark/Male/1927/none
+John Presper Eckert/Male/1919/1995
+Douglas Engelbart/Male/1925/2013
+Margaret Hamilton/Female/1936/none
+Herbert Alexander Simon/Male/1916/none
+John Carmack/Male/1970/none
+David Axmark/Male/1962/none
+James Gosling/Male/1955/none
+Ken Thompson/Male/1943/none
+Brian Kernighan/Male/1942/none
+Donald Knuth/Male/1938/none
+Brendan Eich/Male/1961/none
+Bram Cohen/Male/1975/none
+Guido Van Rossum/Male/1956/none
+Bjarne Stroustrup/Male/1950/none
+Sophie Wilson/Female/1957/none
+Mark Zuckerberg/Male/1984/none
+Radia Perlman/Female/1951/none
+Grace Hopper/Female/1906/1992

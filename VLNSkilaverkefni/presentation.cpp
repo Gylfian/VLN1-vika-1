@@ -373,7 +373,7 @@ void Presentation::printListText()
     cout << " ____________________________________________ " << endl;
     cout << "|----------What do you want to do ?----------|" << endl;
     cout << "|-1) Search the list for a specific entry----|" << endl;
-    cout << "|-2) delete an entry ?-----------------------|" << endl;
+    cout << "|-2) delete an entry ------------------------|" << endl;
     cout << "|-Press any other key to go to the main menu-|" << endl;
     cout << "|____________________________________________|" << endl;
 }
