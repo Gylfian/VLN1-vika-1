@@ -117,7 +117,7 @@ string Presentation::getInputDob()
 string Presentation::getInputDod()
 {
     string Dod;
-    cout << "Enter year of death: ";
+    cout << "Enter year of death, if the person is alive type \"none\": ";
     cin >> Dod;
     return Dod;
 }
