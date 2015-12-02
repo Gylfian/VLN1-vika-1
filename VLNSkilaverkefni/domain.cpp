@@ -382,13 +382,6 @@ bool Domain::normalizeName(string &name)
     return true;
 }
 
-/*
- * Name: normalizeList
- * Parameter/s: vector<CScientist>  &cSciList, vector<int> listYear
- * Description: cSciList er normalizaður frá integer vector yfir í CScientist.dateBorn format. Undir function fyrir sortByYear.
- * Usage: normalizeList(cSciList, listYear)
- * (void)Output/Return: Listi rearranged, cSciList er nú með rétt index miðað við listYear
- */
 void Domain::normalizeList(vector<CScientist>  &cSciList, vector<int> listYear)
 {
     for(unsigned int i = 0; i < listYear.size(); i++)

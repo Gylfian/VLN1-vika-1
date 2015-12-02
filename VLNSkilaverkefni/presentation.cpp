@@ -266,8 +266,16 @@ void Presentation::searchOptions()
         default:
             mainPage();
     }
-    d1.sortBy(searchValue,'1','1');
-    printList(searchValue);
+    if(searchValue.empty())
+    {
+        system("CLS");
+        cout << "That entry does not exist!" << endl;
+    }
+    else
+    {
+        d1.sortBy(searchValue,'1','1');
+        printList(searchValue);
+    }
     printListText();
     printListOptions();
 }
