@@ -14,7 +14,7 @@ public:
      * Parameter/s: string cName, string cGender, string date1, string date2
      * Description: Constructor for the CScientist class
      * Usage: scientist1(George Bush, Female, 2000, 2015);
-     * (int)Output/Return: The scientist is is now resgistered as Gerge Bush, female, born in 1992 and died in 2015
+     * (int)Output/Return: The scientist is is now resgistered as Gerge Bush, female, born in 2000 and died in 2015
      */
     CScientist(string cName, string cGender, string date1, string date2);
 

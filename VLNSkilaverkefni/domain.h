@@ -21,10 +21,17 @@ public:
      * Parameter/s: none
      * Description: Returns a list of scientists from text file
      * Usage: vector<CScientist> list = getScientistList()
-     * (vector<CScientist>)Output/Return: list = allScientists
+     * Output/Return: list = allScientists
      */
     vector<CScientist> getScientistList();
 
+    /*
+     * Name: search
+     * Parameter/s: vector<CScientist> cSciList, char searchVal, string searchString
+     * Description: Used to pick a search method
+     * Usage: search(scientists, name, Charlie);
+     * (vector<CScientist>)Output/Return: searches for the name Charlie in the vector scientists
+     */
     vector<CScientist> search(vector<CScientist> cSciList, char searchVal, string searchString);
 
     /*
@@ -71,7 +78,23 @@ public:
      * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
      */
     void sortBy(vector<CScientist> &cSciList, char pChoice, char cChoice);
+
+    /*
+     * Name: addToFile
+     * Parameter/s: vector<CScientist> &cSciList
+     * Description: Takes in choice of sorting method from user and salls appropriate sorting function
+     * Usage: vector<CScientist> vec = searchByDateDeath(cSciList, "1905"):
+     * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
+     */
     void addToFile(vector<CScientist> &cSciList);
+
+    /*
+     * Name: readFile
+     * Parameter/s: None
+     * Description: Takes in choice of sorting method from user and salls appropriate sorting function
+     * Usage: vector<CScientist> vec = searchByDateDeath(cSciList, "1905"):
+     * (vector<CScientist>)Output/Return: Retrieves everyone with specific death date, in this case 1905
+     */
     vector<CScientist> readFile();
 
     /*
@@ -121,6 +144,13 @@ private:
      */
     void sortByAlphabet(vector<CScientist> &cSciList, bool byAscending);
 
+    /*
+     * Name: vecStrToInt
+     * Parameter/s: vector<CScientist> cSciList
+     * Description: Sorts the list cSciList in alphabetic- or reverse alpabetic order
+     * Usage: sortByAlphabet(cSciList, true)
+     * (void)Output/Return: List rearranged, cSciList comes in alphabetic order
+     */
     vector<int> vecStrToInt(vector<CScientist> cSciList);
 
     /*
@@ -158,6 +188,15 @@ private:
      * (void)Output/Return: Listi rearranged, cSciList is now right indexed in comparision to listYear
      */
     void normalizeList(vector<CScientist>  &cSciList, vector<int> listYear);
+
+
+    /*
+     * Name: reverseList
+     * Parameter/s: vector<CScientist>  &cSciList, vector<int> listYear
+     * Description: cSciList is normalized from integer to vector to CScientist.dateBorn format. Underfunction for sortByYear.
+     * Usage: normalizeList(cSciList, listYear)
+     * (void)Output/Return: Listi rearranged, cSciList is now right indexed in comparision to listYear
+     */
     void reverseList(vector<CScientist> &cSciList);
 
     /*
