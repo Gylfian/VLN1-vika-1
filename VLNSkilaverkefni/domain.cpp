@@ -257,6 +257,8 @@ void Domain::deleteScientist(vector<CScientist> &cSearchList, vector<CScientist>
 
         }
     }
+    Data data;
+    data.writeToFile("scientists.txt", cSciList, true);
 }
 
 

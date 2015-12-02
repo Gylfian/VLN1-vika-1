@@ -283,9 +283,7 @@ void Presentation::deleteFromList()
     vector <CScientist> searchValue, scientist = d1.readFile();
     cout << "Enter the name of the scientist you wish to delete: ";
     getline(cin, name);
-    name = getNameSearch();
-    char ans = '1';
-    searchValue = d1.search(scientist, ans, name);
+    searchValue = d1.search(scientist, '1', name);
     d1.deleteScientist(searchValue, scientist);
 }
 
@@ -344,7 +342,7 @@ void Presentation::printListOptions()
         }break;
         case ('2'):
         {
-
+            deleteFromList();
         }break;
         default:
             mainPage();
