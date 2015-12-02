@@ -282,7 +282,7 @@ void Presentation::deleteFromList()
     getline(cin, name);
     searchValue = d1.search(scientist, '1', name);
     printList(searchValue);
-    char number = 49;
+    int number = 1;
     if(searchValue.empty())
     {
         system("CLS");
@@ -293,16 +293,16 @@ void Presentation::deleteFromList()
     if(searchValue.size() > 1)
     {
         cout << "Insert the number of the person you wish to delete:" << endl;
-        number = getch();
-        cout << number << endl;
+        cin >> number;
     }
+
     cout << "Are you sure you wish to delete this person?(y/n) ";
     char ans = getch();
         switch (ans)
         {
             case ('Y'):
             case ('y'):
-                d1.deleteScientist(searchValue[number-49], scientist);
+                d1.deleteScientist(searchValue[number-1], scientist);
                 break;
             default:
                 printListText();
