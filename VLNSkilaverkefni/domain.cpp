@@ -84,37 +84,39 @@ void Domain::sortByYear(vector<CScientist> &cSciList, bool byOldest)
                 break;
 
             int older = compareYears(listYear[i], listYear[i+1]);
-            if(byOldest)
+            if(older == listYear[i+1])
             {
-                if(older == listYear[i+1])
-                {
-                    swapIntValues(listYear, i, i+1);
-                    swapCounter++;
-                }
-                else
-                {
-                    continue;
-                }
+                swapIntValues(listYear, i, i+1);
+                swapCounter++;
             }
             else
             {
-                if(older != listYear[i+1])
-                {
-                    swapIntValues(listYear, i, i+1);
-                    swapCounter++;
-                }
-                else
-                {
-                    continue;
-                }
+                continue;
             }
-        }
+          }
+
         if(origSwapCounter == swapCounter)
             break;
     }
     normalizeList(cSciList, listYear);
+
+    if(!byOldest)
+    {
+        reverseList(cSciList);
+    }
+
 }
 
+void Domain::reverseList(vector<CScientist> &cSciList)
+{
+    vector<CScientist> tmp;
+    tmp = cSciList;
+    cSciList.clear();
+    for(int i = tmp.size()-1; i >= 0; i--)
+    {
+        cSciList.push_back(tmp[i]);
+    }
+}
 
 void Domain::sortByAlphabet(vector<CScientist> &cSciList, bool byAscending)
 {
@@ -189,11 +191,11 @@ vector<CScientist> Domain::searchByName(vector<CScientist> cSciList, string name
     vector<CScientist> searchResults;
     for(unsigned int i = 0; i < cSciList.size(); i++)
     {       
-        if(cSciList[i].getName() == name)
+        normalizeName(name);
+        if (cSciList[i].getName().find(name) != std::string::npos)
         {
             searchResults.push_back(cSciList[i]);
         }
-
     }
     return searchResults;
 }

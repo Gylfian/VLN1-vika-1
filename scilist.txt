@@ -3,10 +3,7 @@ Ada Lovelace/Female/1815/1852
 Charles Baggage/Male/1791/1871
 Barbara Liskov/Female/1939/none
 Sergey Brin/Male/1973/none
-Larry Page/Male/1973/none
-George Boole/Male/1815/1864
 Philip Don Estridge/Male/1937/1985
-Bill Gates/Male/1955/none
 Tim Berners Lee/Male/1955/none
 Alan Turing/Male/1912/1954
 Wesley Allison Clark/Male/1927/none
