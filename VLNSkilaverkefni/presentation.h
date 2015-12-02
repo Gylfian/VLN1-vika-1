@@ -54,6 +54,7 @@ private:
      * Usage: getch() function returns 1
      * (int)Output/Return: The function calls a function the adds scientists to the list
      */
+    void printListText();
     void listOptions();
     void deleteFromList();
     void whichOrder(char pChoice);

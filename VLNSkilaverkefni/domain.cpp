@@ -243,19 +243,15 @@ vector<CScientist> Domain::searchByDateDeath(vector<CScientist> cSciList, string
 }
 
 
-void Domain::deleteScientist(vector<CScientist> &cSearchList, vector<CScientist> &cSciList)
+void Domain::deleteScientist(CScientist indexToDelete, vector<CScientist> &cSciList)
 {
-    for(unsigned int i = 0; i < cSearchList.size(); i++)
+    for(unsigned int j = 0; j < cSciList.size(); j++)
     {
-        for(unsigned int j = 0; j < cSciList.size(); j++)
+        if(cSciList[j].getName() == indexToDelete.getName())
         {
-            if(cSciList[j].getName() == cSearchList[i].getName())
-            {
-                cSciList.erase(cSciList.begin()+j);
-                j--;
-            }
-
+            cSciList.erase(cSciList.begin()+j);
         }
+
     }
     Data data;
     data.writeToFile("scientists.txt", cSciList, true);

@@ -162,6 +162,8 @@ void Presentation::listOptions()
             Domain d1;
             vector<CScientist> scientists = d1.readFile();
             printList(scientists);
+            printListText();
+            printListOptions();
         }break;
         default:
             mainPage();
@@ -202,6 +204,8 @@ void Presentation::whichOrder(char pChoice)
         {
             d1.sortBy(scientists, pChoice, ans);
             printList(scientists);
+            printListText();
+            printListOptions();
 
         }break;
         default:
@@ -220,14 +224,6 @@ void Presentation::printList(vector<CScientist> scientists)
         cout << "Year of birth: " << scientists[i].getDob() << endl;
         cout << "Year of death: " << scientists[i].getDod() << endl << endl;
     }
-    cout << " ____________________________________________ " << endl;
-    cout << "|----------What do you want to do ?----------|" << endl;
-    cout << "|-1) Search the list for a specific entry----|" << endl;
-    cout << "|-2) delete an entry ?-----------------------|" << endl;
-    cout << "|-Press any other key to go to the main menu-|" << endl;
-    cout << "|____________________________________________|" << endl;
-    printListOptions();
-
 }
 
 void Presentation::searchOptions()
@@ -272,7 +268,8 @@ void Presentation::searchOptions()
     }
     d1.sortBy(searchValue,'1','1');
     printList(searchValue);
-
+    printListText();
+    printListOptions();
 }
 
 
@@ -284,7 +281,29 @@ void Presentation::deleteFromList()
     cout << "Enter the name of the scientist you wish to delete: ";
     getline(cin, name);
     searchValue = d1.search(scientist, '1', name);
-    d1.deleteScientist(searchValue, scientist);
+    printList(searchValue);
+    char number = 49;
+    if(searchValue.size() > 1)
+    {
+        cout << "Insert the number of the person you wish to delete:" << endl;
+        number = getch();
+        cout << number << endl;
+    }
+    cout << "Are you sure you wish to delete this person?(y/n) ";
+    char ans = getch();
+        switch (ans)
+        {
+            case ('Y'):
+            case ('y'):
+                d1.deleteScientist(searchValue[number-49], scientist);
+                break;
+            default:
+                printListText();
+                printListOptions();
+                break;
+        }
+    system("CLS");
+    mainPage();
 }
 
 string Presentation::getNameSearch()
@@ -349,6 +368,15 @@ void Presentation::printListOptions()
     }
 }
 
+void Presentation::printListText()
+{
+    cout << " ____________________________________________ " << endl;
+    cout << "|----------What do you want to do ?----------|" << endl;
+    cout << "|-1) Search the list for a specific entry----|" << endl;
+    cout << "|-2) delete an entry ?-----------------------|" << endl;
+    cout << "|-Press any other key to go to the main menu-|" << endl;
+    cout << "|____________________________________________|" << endl;
+}
 void Presentation::anotherText()
 {
     cout << "-------------Person added--------------" << endl;
